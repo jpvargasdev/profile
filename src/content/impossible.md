@@ -3,10 +3,12 @@
 
 An ever-evolving list of goals that push me beyond my comfort zone. Inspired by Joel Runyon's concept, this is my commitment to continuous growth and adventure.
 
+---
+
 ## Life Goals
 - [ ] Visit all 7 continents
 - [x] Learn to code
-- [ ] Run a marathon
+- [~] Run a marathon
 - [ ] Write a book
 - [ ] Start a successful business
 - [ ] Learn 3 languages fluently
@@ -17,13 +19,15 @@ An ever-evolving list of goals that push me beyond my comfort zone. Inspired by 
 - [ ] Climb a mountain over 4,000m
 - [ ] Go on a solo backpacking trip
 - [x] Try surfing
+- [~] Learn rock climbing
 
 ## Learning Goals
 - [x] Master React and TypeScript
-- [ ] Learn machine learning
+- [~] Learn machine learning
 - [ ] Get AWS certified
 - [ ] Contribute to open source
 - [ ] Speak at a tech conference
+- [ ] Build an AI application
 
 ## Creative Goals
 - [ ] Design and build my dream home
@@ -31,5 +35,13 @@ An ever-evolving list of goals that push me beyond my comfort zone. Inspired by 
 - [ ] Start a podcast
 - [ ] Learn to play guitar
 - [x] Build this portfolio website
+- [~] Write technical blog posts
+
+---
 
 *Last updated: June 2025*
+
+**Legend:**
+- ✅ Completed goals
+- ⏳ Currently in progress  
+- 🧠 Future challenges
