@@ -1,0 +1,30 @@
+
+[
+  {
+    "company": "TechCorp Inc.",
+    "role": "Senior Frontend Developer",
+    "start": "Jan 2022",
+    "end": "Present",
+    "description": "Lead frontend development for a team of 5 developers, architecting scalable React applications serving 100k+ daily active users. Implemented design systems and improved page load times by 40%.",
+    "location": "San Francisco, CA",
+    "technologies": ["React", "TypeScript", "Next.js", "GraphQL", "AWS"]
+  },
+  {
+    "company": "StartupXYZ",
+    "role": "Full Stack Developer",
+    "start": "Mar 2020",
+    "end": "Dec 2021",
+    "description": "Built and maintained full-stack applications using React and Node.js. Collaborated closely with designers and product managers to deliver pixel-perfect user experiences.",
+    "location": "Remote",
+    "technologies": ["React", "Node.js", "MongoDB", "Express", "Docker"]
+  },
+  {
+    "company": "WebSolutions Ltd.",
+    "role": "Junior Developer",
+    "start": "Jun 2018",
+    "end": "Feb 2020",
+    "description": "Developed responsive websites and web applications for various clients. Gained experience in modern web technologies and agile development practices.",
+    "location": "New York, NY",
+    "technologies": ["JavaScript", "HTML/CSS", "Vue.js", "PHP", "MySQL"]
+  }
+]

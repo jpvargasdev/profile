@@ -1,0 +1,33 @@
+
+[
+  {
+    "title": "Photography",
+    "description": "Capturing moments and exploring the world through my lens. Specializing in landscape and street photography.",
+    "icon": "📸"
+  },
+  {
+    "title": "Rock Climbing",
+    "description": "Challenging myself both mentally and physically on natural rock formations and climbing gyms.",
+    "icon": "🧗"
+  },
+  {
+    "title": "Cooking",
+    "description": "Experimenting with international cuisines and perfecting my knife skills. Currently exploring Asian fusion dishes.",
+    "icon": "👨‍🍳"
+  },
+  {
+    "title": "Reading",
+    "description": "Devouring books on technology, philosophy, and science fiction. Always looking for the next great read.",
+    "icon": "📚"
+  },
+  {
+    "title": "Gaming",
+    "description": "Enjoying both indie and AAA games, with a particular love for strategy games and open-world adventures.",
+    "icon": "🎮"
+  },
+  {
+    "title": "Music",
+    "description": "Learning guitar and exploring various genres. Currently working on fingerpicking techniques.",
+    "icon": "🎵"
+  }
+]
