@@ -1,11 +1,14 @@
-
 import { useState, useEffect } from "react";
 import { Calendar, MapPin } from "lucide-react";
 import { Experience } from "../types";
 import { loadExperience } from "../utils/dataLoader";
 import { Skeleton } from "./ui/skeleton";
 
-export const ExperienceSection = () => {
+interface ExperienceSectionProps {
+  onItemClick: (experience: Experience) => void;
+}
+
+export const ExperienceSection = ({ onItemClick }: ExperienceSectionProps) => {
   const [experience, setExperience] = useState<Experience[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -60,11 +63,12 @@ export const ExperienceSection = () => {
         {experience.map((job, index) => (
           <div
             key={index}
-            className="bg-white rounded-xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition-shadow duration-300"
+            className="bg-white rounded-xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition-all duration-300 cursor-pointer"
+            onClick={() => onItemClick(job)}
           >
             <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
               <div className="flex-1">
-                <h3 className="text-xl font-semibold text-slate-900 mb-1">
+                <h3 className="text-xl font-semibold text-slate-900 mb-1 hover:text-blue-600 transition-colors">
                   {job.role}
                 </h3>
                 <div className="text-blue-600 font-medium mb-2">{job.company}</div>
@@ -83,13 +87,13 @@ export const ExperienceSection = () => {
               </div>
             </div>
             
-            <p className="text-slate-600 mb-4 leading-relaxed">
+            <p className="text-slate-600 mb-4 leading-relaxed line-clamp-3">
               {job.description}
             </p>
             
             {job.technologies && (
               <div className="flex flex-wrap gap-2">
-                {job.technologies.map((tech) => (
+                {job.technologies.slice(0, 4).map((tech) => (
                   <span
                     key={tech}
                     className="px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full"
@@ -97,6 +101,11 @@ export const ExperienceSection = () => {
                     {tech}
                   </span>
                 ))}
+                {job.technologies.length > 4 && (
+                  <span className="px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full">
+                    +{job.technologies.length - 4} more
+                  </span>
+                )}
               </div>
             )}
           </div>

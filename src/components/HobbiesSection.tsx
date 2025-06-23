@@ -1,10 +1,13 @@
-
 import { useState, useEffect } from "react";
 import { Hobby } from "../types";
 import { loadHobbies } from "../utils/dataLoader";
 import { Skeleton } from "./ui/skeleton";
 
-export const HobbiesSection = () => {
+interface HobbiesSectionProps {
+  onItemClick: (hobby: Hobby) => void;
+}
+
+export const HobbiesSection = ({ onItemClick }: HobbiesSectionProps) => {
   const [hobbies, setHobbies] = useState<Hobby[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -53,17 +56,18 @@ export const HobbiesSection = () => {
         {hobbies.map((hobby, index) => (
           <div
             key={index}
-            className="bg-white rounded-xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition-all duration-300 hover:-translate-y-1"
+            className="bg-white rounded-xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+            onClick={() => onItemClick(hobby)}
           >
             <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg mb-4 flex items-center justify-center">
               <span className="text-white text-xl">{hobby.icon}</span>
             </div>
             
-            <h3 className="text-lg font-semibold text-slate-900 mb-2">
+            <h3 className="text-lg font-semibold text-slate-900 mb-2 hover:text-blue-600 transition-colors">
               {hobby.title}
             </h3>
             
-            <p className="text-slate-600 leading-relaxed">
+            <p className="text-slate-600 leading-relaxed line-clamp-3">
               {hobby.description}
             </p>
           </div>

@@ -6,9 +6,16 @@ import { ExperienceSection } from "../components/ExperienceSection";
 import { HobbiesSection } from "../components/HobbiesSection";
 import { ImpossibleSection } from "../components/ImpossibleSection";
 import { ContactSection } from "../components/ContactSection";
+import { DetailOverlay } from "../components/DetailOverlay";
+import { Project, Experience, Hobby } from "../types";
+
+type OverlayContent = Project | Experience | Hobby;
+type OverlayType = 'project' | 'experience' | 'hobby';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState("projects");
+  const [overlayContent, setOverlayContent] = useState<OverlayContent | null>(null);
+  const [overlayType, setOverlayType] = useState<OverlayType | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,6 +45,16 @@ const Index = () => {
     }
   };
 
+  const openOverlay = (content: OverlayContent, type: OverlayType) => {
+    setOverlayContent(content);
+    setOverlayType(type);
+  };
+
+  const closeOverlay = () => {
+    setOverlayContent(null);
+    setOverlayType(null);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
       <div className="flex">
@@ -47,27 +64,25 @@ const Index = () => {
           onNavigate={scrollToSection} 
         />
         
-        {/* Scrollable Center Content */}
+        {/* Scrollable Center Content - Now Full Width */}
         <div className="flex-1 ml-80 min-h-screen">
-          <main className="max-w-4xl mx-auto py-12 px-8">
-            <ProjectsSection />
-            <ExperienceSection />
-            <HobbiesSection />
+          <main className="max-w-6xl mx-auto py-12 px-8">
+            <ProjectsSection onItemClick={(project) => openOverlay(project, 'project')} />
+            <ExperienceSection onItemClick={(experience) => openOverlay(experience, 'experience')} />
+            <HobbiesSection onItemClick={(hobby) => openOverlay(hobby, 'hobby')} />
             <ImpossibleSection />
             <ContactSection />
           </main>
         </div>
-        
-        {/* Optional Right Panel - Reserved for future use */}
-        <div className="w-80 hidden xl:block bg-white/50 backdrop-blur-sm border-l border-slate-200">
-          <div className="p-8">
-            <div className="text-slate-400 text-sm font-medium">Detail View</div>
-            <div className="mt-4 text-slate-500 text-sm">
-              This panel will show contextual details when you select projects or experiences.
-            </div>
-          </div>
-        </div>
       </div>
+
+      {/* Detail Overlay */}
+      <DetailOverlay 
+        content={overlayContent}
+        type={overlayType}
+        isOpen={!!overlayContent}
+        onClose={closeOverlay}
+      />
     </div>
   );
 };
