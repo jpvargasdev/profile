@@ -104,6 +104,25 @@
     @apply transition-all duration-300 ease-out;
   }
 
+  /* Advanced button interactions */
+  button:hover {
+    @apply transform;
+  }
+
+  button:active {
+    @apply scale-95;
+  }
+
+  /* Card hover effects */
+  .card-hover {
+    @apply transition-all duration-500 ease-out hover:shadow-2xl hover:-translate-y-2;
+  }
+
+  /* Link hover effects */
+  a:hover {
+    @apply transform;
+  }
+
   /* Prose styling for blog content */
   .prose h2 {
     @apply text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white;
@@ -168,11 +187,11 @@
   @apply ring-2 ring-blue-500 ring-offset-2 dark:ring-offset-gray-900;
 }
 
-/* Microinteractions */
+/* Advanced microinteractions */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -180,16 +199,122 @@
   }
 }
 
-.animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out;
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
-/* Hover effects for cards */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.6s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.4s ease-out;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Enhanced hover effects */
 .hover-lift {
-  @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-lg;
+  @apply transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl;
+}
+
+.hover-scale {
+  @apply transition-all duration-300 hover:scale-105;
+}
+
+.hover-glow {
+  @apply transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25;
 }
 
 /* Button press effect */
 .btn-press {
   @apply transition-transform duration-150 active:scale-95;
+}
+
+/* Modal animations */
+.modal-enter {
+  @apply animate-scale-in;
+}
+
+.modal-exit {
+  @apply transition-all duration-300 opacity-0 scale-95;
+}
+
+/* Gradient text */
+.gradient-text {
+  @apply bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent;
+}
+
+/* Floating elements */
+.floating {
+  @apply animate-float;
+}
+
+/* Stagger animation delays for lists */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+
+/* Interactive underlines */
+.underline-hover {
+  @apply relative;
+}
+
+.underline-hover::after {
+  @apply absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300;
+  content: '';
+}
+
+.underline-hover:hover::after {
+  @apply w-full;
 }
