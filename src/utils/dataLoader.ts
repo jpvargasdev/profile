@@ -3,7 +3,7 @@ import { Project, Experience, Hobby } from '../types';
 
 export const loadProjects = async (): Promise<Project[]> => {
   try {
-    const response = await fetch('/src/data/projects.json');
+    const response = await fetch('/data/projects.json');
     return await response.json();
   } catch (error) {
     console.error('Failed to load projects:', error);
@@ -13,7 +13,7 @@ export const loadProjects = async (): Promise<Project[]> => {
 
 export const loadExperience = async (): Promise<Experience[]> => {
   try {
-    const response = await fetch('/src/data/experience.json');
+    const response = await fetch('/data/experience.json');
     return await response.json();
   } catch (error) {
     console.error('Failed to load experience:', error);
@@ -23,7 +23,7 @@ export const loadExperience = async (): Promise<Experience[]> => {
 
 export const loadHobbies = async (): Promise<Hobby[]> => {
   try {
-    const response = await fetch('/src/data/hobbies.json');
+    const response = await fetch('/data/hobbies.json');
     return await response.json();
   } catch (error) {
     console.error('Failed to load hobbies:', error);

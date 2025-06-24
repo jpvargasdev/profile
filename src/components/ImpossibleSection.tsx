@@ -11,7 +11,7 @@ export const ImpossibleSection = () => {
 
   useEffect(() => {
     const fetchContent = async () => {
-      const markdown = await loadMarkdown("/src/content/impossible.md");
+      const markdown = await loadMarkdown("/content/impossible.md");
       setContent(markdown);
       setLoading(false);
     };
