@@ -1,6 +1,5 @@
-
 import { useState } from "react";
-import { Mail, MapPin, Phone, Send, CheckCircle } from "lucide-react";
+import { Mail, MapPin, Phone, Send, CheckCircle, Github } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 export const ContactSection = () => {
@@ -9,8 +8,7 @@ export const ContactSection = () => {
     email: '',
     message: ''
   });
-  const [isLoading, setIsLoading] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -32,13 +30,13 @@ export const ContactSection = () => {
       return;
     }
 
-    setIsLoading(true);
+    setIsSubmitting(true);
     
     try {
       // Simulate form submission - replace with actual service
       await new Promise(resolve => setTimeout(resolve, 1500));
       
-      setIsSuccess(true);
+      setIsSubmitting(false);
       setFormData({ name: '', email: '', message: '' });
       
       toast({
@@ -47,134 +45,126 @@ export const ContactSection = () => {
       });
       
       // Reset success state after 3 seconds
-      setTimeout(() => setIsSuccess(false), 3000);
+      setTimeout(() => setIsSubmitting(false), 3000);
     } catch (error) {
       toast({
         title: "Error",
         description: "Failed to send message. Please try again.",
         variant: "destructive",
       });
-    } finally {
-      setIsLoading(false);
     }
   };
 
   return (
-    <section id="contact" className="mb-20">
-      <div className="mb-12">
-        <h2 className="text-3xl font-bold text-slate-900 mb-4">Get In Touch</h2>
-        <p className="text-slate-600 text-lg">
-          I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology.
+    <section id="contact" className="mb-16 sm:mb-20">
+      <div className="mb-8 sm:mb-12">
+        <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-3 sm:mb-4">Get In Touch</h2>
+        <p className="text-slate-600 text-base sm:text-lg">
+          Have a project in mind or just want to chat? I'd love to hear from you.
         </p>
       </div>
 
-      <div className="bg-white rounded-xl p-8 shadow-sm border border-slate-200">
-        <div className="grid gap-8 md:grid-cols-2">
-          <div>
-            <h3 className="text-xl font-semibold text-slate-900 mb-6">Contact Information</h3>
+      <div className="grid gap-8 lg:grid-cols-2">
+        {/* Contact Form */}
+        <div className="bg-white rounded-xl p-6 sm:p-8 shadow-sm border border-slate-200">
+          <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+            <div>
+              <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">
+                Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors text-sm sm:text-base"
+                placeholder="Your name"
+                required
+              />
+            </div>
+
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors text-sm sm:text-base"
+                placeholder="your.email@example.com"
+                required
+              />
+            </div>
+
+            <div>
+              <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-2">
+                Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                rows={5}
+                className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors resize-none text-sm sm:text-base"
+                placeholder="Tell me about your project or just say hello..."
+                required
+              />
+            </div>
+
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full bg-blue-600 text-white px-6 py-3 sm:py-4 rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 font-medium text-sm sm:text-base touch-manipulation flex items-center justify-center space-x-2"
+            >
+              {isSubmitting ? (
+                <>
+                  <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  <span>Sending...</span>
+                </>
+              ) : (
+                <span>Send Message</span>
+              )}
+            </button>
+          </form>
+        </div>
+
+        {/* Contact Info */}
+        <div className="space-y-6 sm:space-y-8">
+          <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-6 sm:p-8">
+            <h3 className="text-lg sm:text-xl font-semibold text-slate-900 mb-4">Let's Connect</h3>
+            <p className="text-slate-600 mb-6 text-sm sm:text-base leading-relaxed">
+              I'm always interested in hearing about new opportunities, creative projects, 
+              or just having a friendly conversation about technology and development.
+            </p>
             
-            <div className="space-y-4">
-              <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-slate-50 transition-colors">
-                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                  <Mail className="text-blue-600" size={18} />
+            <div className="space-y-3 sm:space-y-4">
+              <div className="flex items-center space-x-3">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                  <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" />
                 </div>
-                <div>
-                  <div className="font-medium text-slate-900">Email</div>
-                  <div className="text-slate-600">hello@johndoe.dev</div>
-                </div>
+                <span className="text-slate-700 text-sm sm:text-base">hello@johndoe.dev</span>
               </div>
               
-              <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-slate-50 transition-colors">
-                <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
-                  <Phone className="text-green-600" size={18} />
+              <div className="flex items-center space-x-3">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-purple-100 rounded-lg flex items-center justify-center">
+                  <Github className="w-4 h-4 sm:w-5 sm:h-5 text-purple-600" />
                 </div>
-                <div>
-                  <div className="font-medium text-slate-900">Phone</div>
-                  <div className="text-slate-600">+1 (555) 123-4567</div>
-                </div>
-              </div>
-              
-              <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-slate-50 transition-colors">
-                <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
-                  <MapPin className="text-purple-600" size={18} />
-                </div>
-                <div>
-                  <div className="font-medium text-slate-900">Location</div>
-                  <div className="text-slate-600">San Francisco, CA</div>
-                </div>
+                <span className="text-slate-700 text-sm sm:text-base">github.com/johndoe</span>
               </div>
             </div>
           </div>
-          
-          <div>
-            <h3 className="text-xl font-semibold text-slate-900 mb-6">Send a Message</h3>
-            
-            {isSuccess ? (
-              <div className="flex flex-col items-center justify-center py-12 text-center">
-                <CheckCircle className="text-green-500 mb-4" size={48} />
-                <h4 className="text-lg font-semibold text-slate-900 mb-2">Message Sent!</h4>
-                <p className="text-slate-600">Thanks for reaching out. I'll get back to you soon!</p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">Name</label>
-                  <input 
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
-                    placeholder="Your name"
-                    disabled={isLoading}
-                  />
-                </div>
-                
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">Email</label>
-                  <input 
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
-                    placeholder="your.email@example.com"
-                    disabled={isLoading}
-                  />
-                </div>
-                
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">Message</label>
-                  <textarea 
-                    rows={4}
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all resize-none"
-                    placeholder="Tell me about your project..."
-                    disabled={isLoading}
-                  ></textarea>
-                </div>
-                
-                <button 
-                  type="submit"
-                  disabled={isLoading}
-                  className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 font-medium flex items-center justify-center space-x-2"
-                >
-                  {isLoading ? (
-                    <>
-                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
-                      <span>Sending...</span>
-                    </>
-                  ) : (
-                    <>
-                      <Send size={16} />
-                      <span>Send Message</span>
-                    </>
-                  )}
-                </button>
-              </form>
-            )}
+
+          <div className="bg-white rounded-xl p-6 sm:p-8 shadow-sm border border-slate-200">
+            <h3 className="text-lg sm:text-xl font-semibold text-slate-900 mb-4">Response Time</h3>
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+              I typically respond to messages within 24-48 hours. For urgent inquiries, 
+              feel free to reach out directly via email.
+            </p>
           </div>
         </div>
       </div>
