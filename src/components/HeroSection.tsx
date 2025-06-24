@@ -45,8 +45,12 @@ export const HeroSection = () => {
                     alt="Profile" 
                     className="w-full h-full object-cover rounded-full"
                     onError={(e) => {
-                      e.currentTarget.style.display = 'none';
-                      e.currentTarget.nextElementSibling.style.display = 'flex';
+                      const imgElement = e.currentTarget;
+                      const fallbackElement = imgElement.nextElementSibling as HTMLElement;
+                      imgElement.style.display = 'none';
+                      if (fallbackElement) {
+                        fallbackElement.style.display = 'flex';
+                      }
                     }}
                   />
                   <div className="absolute inset-0 flex items-center justify-center text-4xl font-bold text-gray-600 dark:text-gray-300" style={{display: 'none'}}>

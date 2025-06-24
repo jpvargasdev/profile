@@ -132,9 +132,11 @@ const Blog = () => {
               </div>
             </header>
             
-            <ReactMarkdown className="text-gray-700 dark:text-gray-300">
-              {currentPost.content}
-            </ReactMarkdown>
+            <div className="text-gray-700 dark:text-gray-300">
+              <ReactMarkdown>
+                {currentPost.content}
+              </ReactMarkdown>
+            </div>
           </article>
         </main>
       </div>
