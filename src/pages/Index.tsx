@@ -4,14 +4,13 @@ import { MinimalNav } from "../components/MinimalNav";
 import { HeroSection } from "../components/HeroSection";
 import { ProjectsSection } from "../components/ProjectsSection";
 import { ExperienceSection } from "../components/ExperienceSection";
-import { HobbiesSection } from "../components/HobbiesSection";
 import { ImpossibleSection } from "../components/ImpossibleSection";
 import { ContactSection } from "../components/ContactSection";
 import { DetailOverlay } from "../components/DetailOverlay";
-import { Project, Experience, Hobby } from "../types";
+import { Project, Experience } from "../types";
 
-type OverlayContent = Project | Experience | Hobby;
-type OverlayType = 'project' | 'experience' | 'hobby';
+type OverlayContent = Project | Experience;
+type OverlayType = 'project' | 'experience';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState("about");

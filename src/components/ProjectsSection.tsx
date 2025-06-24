@@ -32,11 +32,11 @@ export const ProjectsSection = ({ onItemClick }: ProjectsSectionProps) => {
             </p>
           </div>
           
-          <div className="grid gap-12 md:gap-16">
-            {[...Array(4)].map((_, i) => (
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {[...Array(6)].map((_, i) => (
               <div key={i} className="animate-pulse">
-                <div className="h-64 bg-gray-200 dark:bg-gray-700 rounded-lg mb-6"></div>
-                <div className="h-6 bg-gray-200 dark:bg-gray-700 rounded w-3/4 mb-4"></div>
+                <div className="h-48 bg-gray-200 dark:bg-gray-700 rounded-lg mb-4"></div>
+                <div className="h-6 bg-gray-200 dark:bg-gray-700 rounded w-3/4 mb-2"></div>
                 <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-full mb-2"></div>
                 <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-2/3"></div>
               </div>
@@ -57,48 +57,55 @@ export const ProjectsSection = ({ onItemClick }: ProjectsSectionProps) => {
           </p>
         </div>
 
-        <div className="grid gap-12 md:gap-16">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group cursor-pointer"
+              className="group cursor-pointer transition-all duration-300 hover:-translate-y-2"
               onClick={() => onItemClick(project)}
             >
-              <div className="aspect-video bg-gray-100 dark:bg-gray-800 rounded-lg mb-6 flex items-center justify-center transition-all duration-300 group-hover:bg-gray-200 dark:group-hover:bg-gray-700">
-                <div className="text-gray-400 dark:text-gray-500 font-medium text-lg">{project.title} Preview</div>
+              <div className="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-1 mb-4 transition-all duration-300 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">
+                <div className="aspect-video bg-white dark:bg-gray-900 rounded-md flex items-center justify-center transition-all duration-300">
+                  <div className="text-gray-400 dark:text-gray-500 font-medium text-sm">{project.title}</div>
+                </div>
               </div>
               
               <div className="space-y-4">
-                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors">
                   {project.title}
                 </h3>
                 
-                <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed max-w-3xl">
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
                   {project.description}
                 </p>
                 
-                <div className="flex flex-wrap gap-3">
-                  {project.tags.map((tag) => (
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.slice(0, 3).map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 text-sm text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 rounded-full"
+                      className="px-2 py-1 text-xs text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 rounded-full"
                     >
                       {tag}
                     </span>
                   ))}
+                  {project.tags.length > 3 && (
+                    <span className="px-2 py-1 text-xs text-gray-500 dark:text-gray-500">
+                      +{project.tags.length - 3} more
+                    </span>
+                  )}
                 </div>
                 
-                <div className="flex gap-6 pt-2">
+                <div className="flex gap-4 text-sm">
                   {project.liveUrl && (
-                    <div className="flex items-center space-x-2 text-gray-900 dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
-                      <ExternalLink size={18} />
-                      <span className="font-medium">Live Demo</span>
+                    <div className="flex items-center space-x-1 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+                      <ExternalLink size={14} />
+                      <span>Live</span>
                     </div>
                   )}
                   {project.githubUrl && (
-                    <div className="flex items-center space-x-2 text-gray-900 dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
-                      <Github size={18} />
-                      <span className="font-medium">View Code</span>
+                    <div className="flex items-center space-x-1 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+                      <Github size={14} />
+                      <span>Code</span>
                     </div>
                   )}
                 </div>

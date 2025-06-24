@@ -98,6 +98,48 @@
   html {
     scroll-behavior: smooth;
   }
+
+  /* Enhanced transitions for all interactive elements */
+  button, a, input, textarea {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  /* Prose styling for blog content */
+  .prose h2 {
+    @apply text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white;
+  }
+
+  .prose h3 {
+    @apply text-xl font-semibold mt-6 mb-3 text-gray-900 dark:text-white;
+  }
+
+  .prose p {
+    @apply mb-4 leading-relaxed;
+  }
+
+  .prose code {
+    @apply bg-gray-100 dark:bg-gray-800 rounded px-2 py-1 text-sm;
+  }
+
+  .prose pre {
+    @apply bg-gray-100 dark:bg-gray-800 rounded-lg p-4 overflow-x-auto mb-4;
+  }
+
+  .prose pre code {
+    @apply bg-transparent p-0;
+  }
+
+  .prose ul {
+    @apply mb-4 pl-6;
+  }
+
+  .prose li {
+    @apply mb-2;
+  }
+
+  .prose strong {
+    @apply font-semibold text-gray-900 dark:text-white;
+  }
 }
 
 /* Custom scrollbar */
@@ -115,4 +157,39 @@
 
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-gray-400 dark:bg-gray-500;
+}
+
+/* Smooth focus transitions */
+:focus {
+  @apply outline-none;
+}
+
+:focus-visible {
+  @apply ring-2 ring-blue-500 ring-offset-2 dark:ring-offset-gray-900;
+}
+
+/* Microinteractions */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Hover effects for cards */
+.hover-lift {
+  @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-lg;
+}
+
+/* Button press effect */
+.btn-press {
+  @apply transition-transform duration-150 active:scale-95;
 }
