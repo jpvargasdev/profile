@@ -1,4 +1,3 @@
-
 import { Github, Linkedin, Mail } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -44,8 +43,8 @@ export const HeroSection = () => {
           {/* Enhanced Profile Photo - Much Larger */}
           <div className="flex justify-center mb-12">
             <div className="relative group">
-              {/* Vibrant animated gradient ring */}
-              <div className="w-48 h-48 md:w-56 md:h-56 rounded-full bg-gradient-to-br from-red-500 via-purple-600 to-blue-500 p-1.5 transition-all duration-700 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-purple-500/30 animate-gradient-rotate">
+              {/* Clean tech-inspired animated gradient ring */}
+              <div className="w-48 h-48 md:w-56 md:h-56 rounded-full bg-gradient-to-br from-blue-500 via-blue-400 to-cyan-400 p-1.5 transition-all duration-700 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-blue-500/30 animate-gradient-rotate">
                 {/* Inner shadow ring */}
                 <div className="w-full h-full rounded-full bg-white dark:bg-gray-800 p-1.5 shadow-inner">
                   <div className="w-full h-full rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-5xl font-bold text-gray-600 dark:text-gray-300 overflow-hidden relative">
@@ -69,9 +68,9 @@ export const HeroSection = () => {
                 </div>
               </div>
               
-              {/* Floating animation rings */}
-              <div className="absolute inset-0 rounded-full border-2 border-blue-300/50 dark:border-blue-600/50 animate-pulse"></div>
-              <div className="absolute inset-0 rounded-full border border-purple-300/30 dark:border-purple-600/30 animate-ping"></div>
+              {/* Floating animation rings with updated colors */}
+              <div className="absolute inset-0 rounded-full border-2 border-blue-300/50 dark:border-blue-400/50 animate-pulse"></div>
+              <div className="absolute inset-0 rounded-full border border-cyan-300/30 dark:border-cyan-400/30 animate-ping"></div>
             </div>
           </div>
 
