@@ -1,5 +1,5 @@
 
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "./ui/avatar";
 
 interface FloatingSidebarProps {
@@ -17,10 +17,9 @@ export const FloatingSidebar = ({ activeSection, onNavigate }: FloatingSidebarPr
   ];
 
   const socialLinks = [
-    { icon: Github, href: "https://github.com", label: "GitHub" },
-    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-    { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-    { icon: Mail, href: "mailto:hello@example.com", label: "Email" },
+    { icon: Github, href: "https://github.com/jpvargasdev", label: "GitHub" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/jp-vargasm/", label: "LinkedIn" },
+    { icon: Mail, href: "mailto:vargasm.jp@gmail.com", label: "Email" },
   ];
 
   return (

@@ -1,7 +1,7 @@
 
 import { ThemeToggle } from "./ThemeToggle";
 import { Link, useLocation } from "react-router-dom";
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 interface MinimalNavProps {
   activeSection: string;
@@ -20,10 +20,9 @@ export const MinimalNav = ({ activeSection, onNavigate }: MinimalNavProps) => {
     { id: "contact", label: "Contact" },
   ];
 
-  const socialLinks = [
+ const socialLinks = [
     { icon: Github, href: "https://github.com", label: "GitHub" },
     { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-    { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
     { icon: Mail, href: "mailto:hello@example.com", label: "Email" },
   ];
 

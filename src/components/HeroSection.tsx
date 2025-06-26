@@ -1,5 +1,5 @@
 
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export const HeroSection = () => {
@@ -12,10 +12,9 @@ export const HeroSection = () => {
   }, []);
 
   const socialLinks = [
-    { icon: Github, href: "https://github.com", label: "GitHub" },
-    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-    { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-    { icon: Mail, href: "mailto:hello@example.com", label: "Email" },
+    { icon: Github, href: "https://github.com/jpvargasdev", label: "GitHub" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/jp-vargasm/", label: "LinkedIn" },
+    { icon: Mail, href: "mailto:vargasm.jp@gmail.com", label: "Email" },
   ];
 
   return (
@@ -92,8 +91,8 @@ export const HeroSection = () => {
                 opacity: Math.max(0, 1 - scrollY / 600),
               }}
             >
-              <strong>I build smart things that learn and move.</strong> <br />
-              Senior AI Engineer, Indie Hacker, and Maker blending deep learning, full-stack development, and hardware design. I turn complex ideas into elegant software and intelligent devices — from neural networks to microcontrollers, from prototypes to products.
+              <strong>I build intelligent systems that think, sense, and act.</strong> <br />
+              Senior Software Engineer, Indie Hacker, and Maker passionate about AI, full-stack development, and robotics. I design custom neural networks, build autonomous drones, and bring smart products to life—from hardware schematics to machine learning pipelines.
             </p>
           </div>
         </div>

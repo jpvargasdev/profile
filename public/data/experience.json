@@ -1,30 +1,101 @@
-
 [
   {
-    "company": "TechCorp Inc.",
-    "role": "Senior Frontend Developer",
-    "start": "Jan 2022",
+    "company": "SEB",
+    "role": "Software Engineer",
+    "start": "Sep 2023",
     "end": "Present",
-    "description": "Lead frontend development for a team of 5 developers, architecting scalable React applications serving 100k+ daily active users. Implemented design systems and improved page load times by 40%.",
-    "location": "San Francisco, CA",
-    "technologies": ["React", "TypeScript", "Next.js", "GraphQL", "AWS"]
+    "description": "Backend engineer in a financial institution, contributing to scalable infrastructure and service development. Focused on Node.js services deployed on GCP with strong DevOps practices.",
+    "location": "Stockholm, Sweden",
+    "technologies": ["Node.js", "Kubernetes", "Terraform", "Google Cloud", "Redis", "PostgreSQL", "Docker", "DevOps"]
   },
   {
-    "company": "StartupXYZ",
-    "role": "Full Stack Developer",
-    "start": "Mar 2020",
-    "end": "Dec 2021",
-    "description": "Built and maintained full-stack applications using React and Node.js. Collaborated closely with designers and product managers to deliver pixel-perfect user experiences.",
-    "location": "Remote",
-    "technologies": ["React", "Node.js", "MongoDB", "Express", "Docker"]
+    "company": "App Shack / NoA",
+    "role": "Software Engineer",
+    "start": "Sep 2023",
+    "end": "Present",
+    "description": "Part of a distributed team building backend services and cloud infrastructure. Worked closely on microservices architecture for mobile and web applications.",
+    "location": "Stockholm, Sweden",
+    "technologies": ["Node.js", "Kubernetes", "Google Cloud", "Terraform", "DevOps"]
   },
   {
-    "company": "WebSolutions Ltd.",
-    "role": "Junior Developer",
+    "company": "0+X",
+    "role": "Software Engineer",
+    "start": "Jan 2022",
+    "end": "Sep 2023",
+    "description": "Worked as a consultant building software solutions for international clients. Delivered production-grade code and contributed to team practices and architecture decisions.",
+    "location": "Stockholm, Sweden",
+    "technologies": ["React Native", "Node.js", "Docker", "Kubernetes", "Python", "Django", "Flask"]
+  },
+  {
+    "company": "Routte",
+    "role": "Co-Founder",
+    "start": "Jan 2020",
+    "end": "Mar 2023",
+    "description": "Launched and maintained a local transportation solution using web technologies. Focused on MVP development and deployment while managing technical decisions.",
+    "location": "Bogotá, Colombia",
+    "technologies": ["React Native", "Node.js", "Docker", "Kubernetes", "Python", "Django", "Flask"]
+  },
+  {
+    "company": "Michael Page",
+    "role": "Senior Software Engineer",
+    "start": "Jun 2021",
+    "end": "Feb 2022",
+    "description": "Worked on Adidas.com ecommerce platform. Focused on frontend development with JavaScript/TypeScript and backend services with Node.js. Advocated for functional programming practices.",
+    "location": "Bogotá, Colombia",
+    "technologies": ["Next.js", "Node.js", "JavaScript", "TypeScript", "PostgreSQL"]
+  },
+  {
+    "company": "Univision Communications Inc.",
+    "role": "Senior Software Engineer",
+    "start": "Jul 2019",
+    "end": "Jun 2021",
+    "description": "Developed mobile and web applications for Univision platforms, including news and sports apps. Collaborated on cross-platform development and integration.",
+    "location": "Bogotá, Colombia",
+    "technologies": ["React", "React Native", "Java", "Objective-C", "Next.js"]
+  },
+  {
+    "company": "Softseguros",
+    "role": "Freelance Software Engineer",
     "start": "Jun 2018",
-    "end": "Feb 2020",
-    "description": "Developed responsive websites and web applications for various clients. Gained experience in modern web technologies and agile development practices.",
-    "location": "New York, NY",
-    "technologies": ["JavaScript", "HTML/CSS", "Vue.js", "PHP", "MySQL"]
+    "end": "May 2020",
+    "description": "Built mobile apps in iOS and Android using React Native, Java, and Objective-C for insurance clients.",
+    "location": "Bogotá, Colombia",
+    "technologies": ["React Native", "Java", "Objective-C"]
+  },
+  {
+    "company": "Globant",
+    "role": "Web UI Developer",
+    "start": "Jul 2018",
+    "end": "Jul 2019",
+    "description": "Worked on frontend projects for clients like Hallmark and Lending Club using EmberJS, ReactJS, and NodeJS.",
+    "location": "Bogotá, Colombia",
+    "technologies": ["ReactJS", "Node.js", "Handlebars", "EmberJS", "Sass", "GraphQL", "CSS", "HTML5"]
+  },
+  {
+    "company": "NativApps",
+    "role": "Senior Software Engineer",
+    "start": "Jun 2018",
+    "end": "Aug 2018",
+    "description": "Contributed to NFL mobile/web application development using React Native and modern frontend tools.",
+    "location": "Colombia",
+    "technologies": ["React Native", "CSS", "HTML5", "Java", "Swift", "GraphQL"]
+  },
+  {
+    "company": "Rapigo",
+    "role": "Software Engineer",
+    "start": "Mar 2016",
+    "end": "Jun 2018",
+    "description": "Designed and developed delivery and client mobile apps. Maintained real-time systems using NodeJS and Django.",
+    "location": "Bogotá, Colombia",
+    "technologies": ["React Native", "Java", "Swift", "NodeJS", "Socket.io", "Django", "Python", "HTML5", "CSS"]
+  },
+  {
+    "company": "Parking International",
+    "role": "Automation Engineer",
+    "start": "Oct 2013",
+    "end": "Nov 2015",
+    "description": "Worked on automation and embedded systems integrating hardware with software components in parking solutions.",
+    "location": "Colombia",
+    "technologies": []
   }
 ]

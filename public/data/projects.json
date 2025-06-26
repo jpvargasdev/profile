@@ -1,39 +1,61 @@
 
 [
   {
-    "title": "E-Commerce Platform",
+    "title": "Klimatväktaren — Climate Monitoring Device",
     "year": "2024",
-    "description": "A full-stack e-commerce solution built with React, Node.js, and PostgreSQL. Features include user authentication, payment processing, and admin dashboard.",
-    "tags": ["React", "TypeScript", "Node.js", "PostgreSQL", "Stripe"],
-    "liveUrl": "https://example-ecommerce.com",
-    "githubUrl": "https://github.com/johndoe/ecommerce-platform",
+    "description": "Custom hardware-software system developed for If Insurance to monitor climate conditions in Swedish municipalities. Built the IoT device using Raspberry Pi and developed the backend in Python with Django. Real-time data is visualized via a dashboard for municipal adaptation strategies.",
+    "tags": ["Python", "Django", "Raspberry Pi", "IoT", "Sensors"],
+    "liveUrl": "https://www.if.se/om-if/hallbarhet/klimatanpassning/klimatvarnaren",
+    "githubUrl": null,
     "featured": true
   },
   {
-    "title": "Task Management App",
-    "year": "2024",
-    "description": "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-    "tags": ["Next.js", "React", "Supabase", "Tailwind CSS"],
-    "liveUrl": "https://example-tasks.com",
-    "githubUrl": "https://github.com/johndoe/task-manager",
+    "title": "Routte — Last-Mile Delivery Optimization Platform",
+    "year": "2021",
+    "description": "Co-founded Routte, a startup focused on optimizing last-mile delivery for small and medium-sized businesses. Designed and built a full-stack platform enabling route planning, dispatching, communication, and real-time delivery tracking. Helped businesses improve operational efficiency and customer satisfaction.",
+    "tags": ["Next.js", "TypeScript", "Mapbox", "Firebase", "Startup"],
+    "liveUrl": "https://routte.co/",
+    "githubUrl": null,
     "featured": true
   },
   {
-    "title": "Weather Dashboard",
-    "year": "2023",
-    "description": "A beautiful weather dashboard that displays current conditions, forecasts, and weather maps with location-based detection.",
-    "tags": ["React", "TypeScript", "OpenWeather API", "Chart.js"],
-    "liveUrl": "https://example-weather.com",
-    "githubUrl": "https://github.com/johndoe/weather-dashboard",
-    "featured": false
+    "title": "Custom FPV Drones — Designed, Built, and Flown",
+    "year": "2020–2025",
+    "description": "Over the past few years, I've designed, built, and flown multiple FPV drones ranging from 2.5\" to 4\" — all fully custom. My process combines open-source tools like FreeCAD, OpenSCAD,  with 3D printing, structural analysis, and hardware sourced from global suppliers. I design my own frames with mechanical stress considerations, aiming for high performance in freestyle and cinematic flight.",
+    "tags": ["FPV", "FreeCAD", "OpenSCAD", "3D Printing", "Betaflight", "ArduPilot", "iNav", "Maker", "Embedded Systems"],
+    "liveUrl": "https://rotorbuilds.com/profile/103168",
+    "githubUrl": "https://github.com/jpvargasdev/drone_frames",
+    "featured": true
   },
   {
-    "title": "Portfolio Website",
-    "year": "2023",
-    "description": "This very portfolio website built with React and Tailwind CSS, featuring smooth animations and responsive design.",
-    "tags": ["React", "TypeScript", "Tailwind CSS", "Vite"],
-    "liveUrl": "https://johndoe.dev",
-    "githubUrl": "https://github.com/johndoe/portfolio",
+    "title": "Guilliman — Indie App for Automated Financial Health",
+    "year": "2024",
+    "description": "Guilliman is a personal finance automation app built to run my own financial life. It automatically classifies transactions, tracks daily expenses, and analyzes spending habits based on the 50/30/20 rule. Powered by a custom machine learning model, it provides contextual insights and alerts — all wrapped in a native mobile app built from scratch as a solo indie project.",
+    "tags": ["React Native", "Golang", "PostgreSQL", "Railway", "Python", "AI", "ML", "Swift", "Kotlin", "Fintech", "Indie Hacker"],
+    "liveUrl": null,
+    "githubUrl": {
+      "backend": "https://github.com/jpvargasdev/guilliman_expenses",
+      "frontend": "https://github.com/jpvargasdev/tracker",
+      "charts": "https://github.com/jpvargasdev/helm-charts"
+    },
+    "featured": true
+  },
+  {
+    "title": "NN Engine — Custom Neural Network Engine from Scratch",
+    "year": "2024",
+    "description": "A neural network engine built entirely from scratch using JavaScript and TypeScript, featuring matrix-based computation, backpropagation, batch training, activation functions like ReLU and Sigmoid, and loss functions like MSE and Cross-Entropy. Designed to deepen my understanding of deep learning internals and serve as a minimal educational playground.",
+    "tags": ["Neural Networks", "JavaScript", "TypeScript", "ML", "Backpropagation", "Matrix Math"],
+    "liveUrl": null,
+    "githubUrl": "https://github.com/jpvargasdev/NN_engine",
+    "featured": true
+  },
+  {
+    "title": "Kaggle Projects — Applied Machine Learning & Experiments",
+    "year": "2024",
+    "description": "A collection of notebooks, data science experiments, and ML competitions explored on Kaggle. Focus areas include data preprocessing, feature engineering, model tuning, and evaluation. Used as a sandbox to test ideas and sharpen practical skills in applied ML.",
+    "tags": ["Kaggle", "Data Science", "ML", "Exploratory Analysis", "Notebooks", "Competitions"],
+    "liveUrl": "https://www.kaggle.com/work",
+    "githubUrl": null,
     "featured": true
   }
 ]
