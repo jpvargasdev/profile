@@ -41,14 +41,14 @@ export const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8 pt-20">
         <div className="space-y-6">
-          {/* Enhanced Profile Photo */}
-          <div className="flex justify-center mb-8">
+          {/* Enhanced Profile Photo - Much Larger */}
+          <div className="flex justify-center mb-12">
             <div className="relative group">
-              {/* Gradient ring with hover effect */}
-              <div className="w-36 h-36 rounded-full bg-gradient-to-br from-blue-400 via-purple-500 to-pink-400 p-1 transition-all duration-500 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-blue-500/25">
+              {/* Vibrant animated gradient ring */}
+              <div className="w-48 h-48 md:w-56 md:h-56 rounded-full bg-gradient-to-br from-red-500 via-purple-600 to-blue-500 p-1.5 transition-all duration-700 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-purple-500/30 animate-gradient-rotate">
                 {/* Inner shadow ring */}
-                <div className="w-full h-full rounded-full bg-white dark:bg-gray-800 p-1 shadow-inner">
-                  <div className="w-full h-full rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-4xl font-bold text-gray-600 dark:text-gray-300 overflow-hidden relative">
+                <div className="w-full h-full rounded-full bg-white dark:bg-gray-800 p-1.5 shadow-inner">
+                  <div className="w-full h-full rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-5xl font-bold text-gray-600 dark:text-gray-300 overflow-hidden relative">
                     <img 
                       src="/profile.png" 
                       alt="Profile" 
@@ -62,15 +62,16 @@ export const HeroSection = () => {
                         }
                       }}
                     />
-                    <div className="absolute inset-0 flex items-center justify-center text-4xl font-bold text-gray-600 dark:text-gray-300" style={{display: 'none'}}>
+                    <div className="absolute inset-0 flex items-center justify-center text-5xl font-bold text-gray-600 dark:text-gray-300" style={{display: 'none'}}>
                       JV
                     </div>
                   </div>
                 </div>
               </div>
               
-              {/* Floating animation ring */}
+              {/* Floating animation rings */}
               <div className="absolute inset-0 rounded-full border-2 border-blue-300/50 dark:border-blue-600/50 animate-pulse"></div>
+              <div className="absolute inset-0 rounded-full border border-purple-300/30 dark:border-purple-600/30 animate-ping"></div>
             </div>
           </div>
 

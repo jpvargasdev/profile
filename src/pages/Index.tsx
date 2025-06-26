@@ -2,8 +2,11 @@
 import { useEffect, useState } from "react";
 import { MinimalNav } from "../components/MinimalNav";
 import { HeroSection } from "../components/HeroSection";
+import { NowSection } from "../components/NowSection";
 import { ProjectsSection } from "../components/ProjectsSection";
+import { LabSection } from "../components/LabSection";
 import { ExperienceSection } from "../components/ExperienceSection";
+import { TechRadarSection } from "../components/TechRadarSection";
 import { ImpossibleSection } from "../components/ImpossibleSection";
 import { ContactSection } from "../components/ContactSection";
 import { DetailOverlay } from "../components/DetailOverlay";
@@ -19,7 +22,7 @@ const Index = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["about", "projects", "experience", "impossible", "contact"];
+      const sections = ["about", "now", "projects", "lab", "experience", "tech-radar", "impossible", "contact"];
       const scrollPosition = window.scrollY + 200;
 
       for (const section of sections) {
@@ -64,8 +67,11 @@ const Index = () => {
         <HeroSection />
         
         <div className="max-w-6xl mx-auto px-6 space-y-32">
+          <NowSection />
           <ProjectsSection onItemClick={(project) => openOverlay(project, 'project')} />
+          <LabSection />
           <ExperienceSection onItemClick={(experience) => openOverlay(experience, 'experience')} />
+          <TechRadarSection />
           <ImpossibleSection />
           <ContactSection />
         </div>
