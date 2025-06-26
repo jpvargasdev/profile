@@ -1,7 +1,6 @@
 
 import { useEffect, useState } from "react";
 import { MinimalNav } from "../components/MinimalNav";
-import { FloatingSidebar } from "../components/FloatingSidebar";
 import { HeroSection } from "../components/HeroSection";
 import { ProjectsSection } from "../components/ProjectsSection";
 import { ExperienceSection } from "../components/ExperienceSection";
@@ -58,15 +57,10 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
-      {/* Mobile Navigation */}
-      <div className="lg:hidden">
-        <MinimalNav activeSection={activeSection} onNavigate={scrollToSection} />
-      </div>
+      {/* Top Navigation for all screen sizes */}
+      <MinimalNav activeSection={activeSection} onNavigate={scrollToSection} />
       
-      {/* Desktop Floating Sidebar */}
-      <FloatingSidebar activeSection={activeSection} onNavigate={scrollToSection} />
-      
-      <main className="lg:ml-32">
+      <main>
         <HeroSection />
         
         <div className="max-w-6xl mx-auto px-6 space-y-32">

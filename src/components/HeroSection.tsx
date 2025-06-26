@@ -40,7 +40,7 @@ export const HeroSection = () => {
       />
       
       {/* Content */}
-      <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8">
+      <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8 pt-20">
         <div className="space-y-6">
           {/* Enhanced Profile Photo */}
           <div className="flex justify-center mb-8">
@@ -64,7 +64,7 @@ export const HeroSection = () => {
                       }}
                     />
                     <div className="absolute inset-0 flex items-center justify-center text-4xl font-bold text-gray-600 dark:text-gray-300" style={{display: 'none'}}>
-                      JD
+                      JV
                     </div>
                   </div>
                 </div>
@@ -98,9 +98,9 @@ export const HeroSection = () => {
           </div>
         </div>
         
-        {/* Social links - hidden on desktop as they're in sidebar */}
+        {/* Social links - visible on mobile since they're hidden in nav */}
         <div 
-          className="flex justify-center space-x-6 pt-8 lg:hidden"
+          className="flex justify-center space-x-6 pt-8 md:hidden"
           style={{
             transform: `translateY(${scrollY * 0.02}px)`,
             opacity: Math.max(0, 1 - scrollY / 700),
