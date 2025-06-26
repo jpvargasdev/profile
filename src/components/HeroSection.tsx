@@ -51,7 +51,7 @@ export const HeroSection = () => {
                 <div className="w-full h-full rounded-full bg-white dark:bg-gray-800 p-1 shadow-inner">
                   <div className="w-full h-full rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-4xl font-bold text-gray-600 dark:text-gray-300 overflow-hidden relative">
                     <img 
-                      src="/placeholder.svg" 
+                      src="/profile.png" 
                       alt="Profile" 
                       className="w-full h-full object-cover rounded-full transition-all duration-500 group-hover:scale-105"
                       onError={(e) => {
@@ -83,7 +83,7 @@ export const HeroSection = () => {
                 opacity: Math.max(0, 1 - scrollY / 500),
               }}
             >
-              John Doe
+              Juan Vargas
             </h1>
             <p 
               className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 font-light max-w-2xl mx-auto leading-relaxed transition-all duration-700"
@@ -92,7 +92,8 @@ export const HeroSection = () => {
                 opacity: Math.max(0, 1 - scrollY / 600),
               }}
             >
-              Full-stack developer passionate about creating beautiful, functional web experiences with modern technologies.
+              <strong>I build smart things that learn and move.</strong> <br />
+              Senior AI Engineer, Indie Hacker, and Maker blending deep learning, full-stack development, and hardware design. I turn complex ideas into elegant software and intelligent devices — from neural networks to microcontrollers, from prototypes to products.
             </p>
           </div>
         </div>
