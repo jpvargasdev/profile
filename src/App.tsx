@@ -11,7 +11,7 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 // Use /portfolio as basename for GitHub Pages, but handle local development
-const basename = import.meta.env.PROD ? "/portfolio" : "/";
+const basename = import.meta.env.PROD ? "/profile" : "/";
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
