@@ -2,6 +2,7 @@
 import { X, Calendar, Clock, ExternalLink } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "./ui/dialog";
 import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
 import { Link } from "react-router-dom";
 
 interface BlogPost {
@@ -47,7 +48,24 @@ export const BlogPostModal = ({ post, isOpen, onClose }: BlogPostModalProps) => 
         
         <div className="prose prose-lg dark:prose-invert max-w-none mb-6">
           <div className="text-gray-700 dark:text-gray-300">
-            <ReactMarkdown>
+            <ReactMarkdown
+              rehypePlugins={[rehypeRaw]}
+              components={{
+                iframe: ({ node, ...props }) => (
+                  <div className="my-4 flex justify-center">
+                    <iframe
+                      {...props}
+                      className="rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 w-full max-w-2xl"
+                      loading="lazy"
+                      style={{
+                        height: props.height || '400px',
+                        ...props.style
+                      }}
+                    />
+                  </div>
+                ),
+              }}
+            >
               {post.content.slice(0, 500) + '...'}
             </ReactMarkdown>
           </div>

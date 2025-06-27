@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Calendar, ArrowLeft, Clock } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
 import { MinimalNav } from "../components/MinimalNav";
 import { BlogPostModal } from "../components/BlogPostModal";
 
@@ -152,7 +153,24 @@ const Blog = () => {
             </header>
             
             <div className="text-gray-700 dark:text-gray-300">
-              <ReactMarkdown>
+              <ReactMarkdown
+                rehypePlugins={[rehypeRaw]}
+                components={{
+                  iframe: ({ node, ...props }) => (
+                    <div className="my-8 flex justify-center">
+                      <iframe
+                        {...props}
+                        className="rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 w-full max-w-4xl"
+                        loading="lazy"
+                        style={{
+                          height: props.height || '600px',
+                          ...props.style
+                        }}
+                      />
+                    </div>
+                  ),
+                }}
+              >
                 {currentPost.content}
               </ReactMarkdown>
             </div>
