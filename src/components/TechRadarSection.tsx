@@ -6,16 +6,16 @@ export const TechRadarSection = () => {
 
   const techRadar = {
     adopt: [
-      "React/TypeScript", "Python", "Docker", "AWS", "TensorFlow", "PostgreSQL"
+      "TypeScript", "Python", "Go", "Docker", "GCP", "AWS", "Kubernetes", "Terraform", "Github Actions", "PyTorch", "PostgreSQL"
     ],
     trial: [
-      "Rust", "WebAssembly", "Kubernetes", "GraphQL", "PyTorch", "Supabase"
+      "R", "WebAssembly", "TensorFlow", "PyTorch", "C"
     ],
     assess: [
-      "Svelte", "Deno", "Edge Computing", "Quantum ML", "WebRTC", "Tauri"
+      "Svelte", "Deno", "Edge Computing", "Quantum ML", "WebRTC"
     ],
     hold: [
-      "jQuery", "PHP", "MySQL", "Webpack", "REST APIs", "Monoliths"
+      "jQuery", "PHP", "MySQL", "Webpack"
     ]
   };
 

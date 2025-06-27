@@ -12,13 +12,13 @@ export const NowSection = () => {
     {
       icon: Wrench,
       label: "Building",
-      value: "Guilliman AI, autonomous drones",
+      value: "Guilliman AI, Autonomous drones",
       color: "text-purple-500"
     },
     {
       icon: Brain,
       label: "Learning",
-      value: "Reinforcement Learning, Embedded Systems",
+      value: "Reinforcement Learning, Machine learning algorithms, Embedded Systems",
       color: "text-blue-500"
     },
     {
@@ -66,7 +66,7 @@ export const NowSection = () => {
 
         <div className="text-center mt-8">
           <p className="text-sm text-gray-500 dark:text-gray-500">
-            Last updated: December 2024 • Inspired by{" "}
+            Last updated: June 2025 • Inspired by{" "}
             <a 
               href="https://nownownow.com" 
               target="_blank" 
