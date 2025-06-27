@@ -1,37 +1,81 @@
 ---
-title: "Why I Built My Own Neural Network Engine"
-date: "2025-06-20"
-excerpt: "Building my own neural network engine from scratch taught me more than any tutorial could. Here's what I learned..."
-slug: "neural-network-engine"
+title: "Handcrafted CNN: Learning Deep Learning the Hard Way"
+date: "2025-06-27"
+excerpt: "What happens when you implement a neural network from scratch? I skipped the libraries and built it all—by hand. Here's what I learned."
+slug: "handcrafted-cnn"
 ---
 
-I decided to build my own neural network engine using only TypeScript. No TensorFlow. No PyTorch. Just math, arrays, and headaches.
+<iframe src="https://www.kaggle.com/embed/jpvargas/handcrafted-cnn-learning-deep-learning-hard-way?kernelSessionId=247211738" height="800" style="margin: 0 auto; width: 100%; max-width: 950px;" frameborder="0" scrolling="auto" title="Handcrafted CNN: Learning Deep Learning Hard Way"></iframe>
 
-### Why?
+---
 
-Because I wanted to understand how backpropagation *really* works — not just theoretically, but line by line.
+## Why I Did This
 
-When you use high-level frameworks, you're abstracted away from the core mechanics. You call `model.fit()` and magic happens. But what exactly is happening?
+The goal was simple: **learn neural networks by building one from scratch**, and then write a blog post to share what I learned.
 
-### What I learned
+No libraries, no black-box frameworks—just raw logic, math, and curiosity.
 
-- **Matrix operations are essential.** Everything in neural networks boils down to matrix multiplication and element-wise operations.
-- **Debugging gradients manually builds intuition.** When you manually compute gradients and compare them to numerical gradients, you develop a deep understanding of what's happening.
-- **Visualization makes training feel magical.** Watching loss curves decrease and seeing the model learn patterns in real-time never gets old.
+---
 
-### The Implementation
+## Why From Scratch?
 
-The core of my engine consists of just a few TypeScript classes:
+Because I wanted to truly **understand the concepts**, not just move data through layers with `model.fit()`. I was tired of the *magic*. I needed to get my hands dirty.
 
-- `Matrix` - handles all linear algebra operations
-- `Layer` - represents a single neural network layer
-- `Network` - orchestrates the forward and backward passes
-- `Optimizer` - implements various optimization algorithms
+---
 
-### What's Next?
+## Tools I Used
 
-I'll open source it soon, and I'm already working on adding support for convolutional layers and better visual debugging tools.
+- **TypeScript** for building the engine from scratch
+- **Python** for running the final notebook
+- **Kaggle** to document everything in one place
 
-The goal isn't to compete with existing frameworks, but to provide a learning tool that makes the black box transparent.
+---
 
-Stay tuned.
+## The Biggest Challenge
+
+Honestly, **understanding the math** behind neural networks was the hardest part.
+
+Once I nailed that down, the code started to make sense. Internalizing the concepts was more challenging than the syntax itself.
+
+---
+
+## What I Built
+
+I ended up implementing:
+
+- A fully working **neural network engine**
+- A **CNN (Convolutional Neural Network)**
+- A comparison with a regular fully-connected network on the same dataset
+
+---
+
+## Key Result
+
+Seeing the CNN outperform the standard network was incredible. The accuracy boost on digit recognition was **significant**, and it made the extra effort totally worth it.
+
+---
+
+## What’s Next?
+
+I built this engine just for learning purposes. But maybe I’ll reuse it.  
+In fact, I already have a TypeScript repo where I train cars to drive themselves on a track:  
+🔗 [Self-driving cars in TS](https://github.com/jpvargasdev/cars)
+
+This is the neural network engine repo:  
+🔗 [NN Engine (TypeScript)](https://github.com/jpvargasdev/NN_engine)
+
+---
+
+## Why I Shared This on Kaggle
+
+I wanted to **document the process** and **start joining competitions**.  
+It’s also a great way to study other machine learning techniques like:
+
+- Linear Regression  
+- Decision Trees  
+- Other classical ML models
+
+---
+
+Hope this inspires someone else to build from scratch at least once. You’ll learn more than you expect.
+ w
