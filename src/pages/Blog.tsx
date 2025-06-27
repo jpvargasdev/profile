@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Calendar, ArrowLeft, Clock } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
@@ -33,26 +32,38 @@ const Blog = () => {
           postSlugs.map(async (slug) => {
             try {
               const response = await fetch(`/content/blog/${slug}.md`);
+              if (!response.ok) {
+                throw new Error(`Failed to fetch ${slug}.md: ${response.status}`);
+              }
               const markdown = await response.text();
               
-              // Parse frontmatter
-              const frontmatterMatch = markdown.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
-              if (!frontmatterMatch) throw new Error('Invalid frontmatter');
+              // Parse frontmatter with more flexible regex
+              const frontmatterMatch = markdown.match(/^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/);
+              if (!frontmatterMatch) {
+                console.error(`Invalid frontmatter format in ${slug}.md`);
+                return null;
+              }
               
               const frontmatter = frontmatterMatch[1];
               const content = frontmatterMatch[2];
               
-              // Parse frontmatter fields
-              const title = frontmatter.match(/title: "(.*)"/)?.[1] || '';
-              const date = frontmatter.match(/date: "(.*)"/)?.[1] || '';
-              const excerpt = frontmatter.match(/excerpt: "(.*)"/)?.[1] || '';
+              // Parse frontmatter fields with better error handling
+              const titleMatch = frontmatter.match(/title:\s*["']([^"']+)["']/);
+              const dateMatch = frontmatter.match(/date:\s*["']([^"']+)["']/);
+              const excerptMatch = frontmatter.match(/excerpt:\s*["']([^"']+)["']/);
+              const slugMatch = frontmatter.match(/slug:\s*["']([^"']+)["']/);
+              
+              if (!titleMatch || !dateMatch || !excerptMatch) {
+                console.error(`Missing required frontmatter fields in ${slug}.md`);
+                return null;
+              }
               
               return {
-                slug,
-                title,
-                date,
-                excerpt,
-                content
+                slug: slugMatch ? slugMatch[1] : slug,
+                title: titleMatch[1],
+                date: dateMatch[1],
+                excerpt: excerptMatch[1],
+                content: content.trim()
               };
             } catch (error) {
               console.error(`Failed to load blog post: ${slug}`, error);
