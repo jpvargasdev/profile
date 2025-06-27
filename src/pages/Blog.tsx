@@ -31,7 +31,7 @@ const Blog = () => {
         const loadedPosts = await Promise.all(
           postSlugs.map(async (slug) => {
             try {
-              const response = await fetch(`/content/blog/${slug}.md`);
+              const response = await fetch(`${import.meta.env.BASE_URL}content/blog/${slug}.md`);
               if (!response.ok) {
                 throw new Error(`Failed to fetch ${slug}.md: ${response.status}`);
               }

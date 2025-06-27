@@ -49,7 +49,7 @@ export const HeroSection = () => {
                 <div className="w-full h-full rounded-full bg-white dark:bg-gray-800 p-1.5 shadow-inner">
                   <div className="w-full h-full rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-5xl font-bold text-gray-600 dark:text-gray-300 overflow-hidden relative">
                     <img 
-                      src="/profile.png" 
+                      src={`${import.meta.env.BASE_URL}profile.png`}
                       alt="Profile" 
                       className="w-full h-full object-cover rounded-full transition-all duration-500 group-hover:scale-105"
                       onError={(e) => {

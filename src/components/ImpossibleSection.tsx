@@ -10,7 +10,7 @@ export const ImpossibleSection = () => {
 
   useEffect(() => {
     const fetchContent = async () => {
-      const markdown = await loadMarkdown("/content/impossible.md");
+      const markdown = await loadMarkdown(`${import.meta.env.BASE_URL}content/impossible.md`);
       setContent(markdown);
       setLoading(false);
     };
