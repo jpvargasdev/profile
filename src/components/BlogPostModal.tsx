@@ -1,18 +1,9 @@
-
 import { X, Calendar, Clock, ExternalLink } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "./ui/dialog";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import { Link } from "react-router-dom";
-
-interface BlogPost {
-  slug: string;
-  title: string;
-  date: string;
-  excerpt: string;
-  content: string;
-  tags?: string[];
-}
+import { BlogPost } from "../utils/blogLoader";
 
 interface BlogPostModalProps {
   post: BlogPost | null;
