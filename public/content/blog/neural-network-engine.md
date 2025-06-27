@@ -1,4 +1,3 @@
-
 ---
 title: "Why I Built My Own Neural Network Engine"
 date: "2025-06-20"

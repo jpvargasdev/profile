@@ -1,4 +1,3 @@
-
 ---
 title: "React Performance: Beyond useMemo and useCallback"
 date: "2025-06-15"
