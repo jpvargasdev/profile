@@ -5,6 +5,8 @@ excerpt: "How my first month of learning data science and ML will perform in a r
 slug: "handcrafted-cnn"
 ---
 
+<iframe src="https://www.kaggle.com/code/jpvargas/challenge-house-prices?kernelSessionId=253423644" height="800" style="margin: 0 auto; width: 100%; max-width: 950px;" frameborder="0" scrolling="auto" title="Handcrafted CNN: Learning Deep Learning Hard Way"></iframe>
+
 ## Why I Did This
 
 The goal was simple: **Test my knowledge of Data Science and ML after my first month of study**, and then write a blog post to share what I learned.
@@ -69,10 +71,6 @@ It’s also a great way to study other machine learning techniques like:
 - Linear Regression  
 - Decision Trees  
 - Other classical ML models
-
----
-
-<iframe src="https://www.kaggle.com/code/jpvargas/challenge-house-prices?kernelSessionId=253423644" height="800" style="margin: 0 auto; width: 100%; max-width: 950px;" frameborder="0" scrolling="auto" title="Handcrafted CNN: Learning Deep Learning Hard Way"></iframe>
 
 ---
 

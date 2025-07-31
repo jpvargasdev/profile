@@ -5,6 +5,10 @@ excerpt: "What happens when you implement a neural network from scratch? I skipp
 slug: "handcrafted-cnn"
 ---
 
+<iframe src="https://www.kaggle.com/embed/jpvargas/handcrafted-cnn-learning-deep-learning-hard-way?kernelSessionId=247211738" height="800" style="margin: 0 auto; width: 100%; max-width: 950px;" frameborder="0" scrolling="auto" title="Handcrafted CNN: Learning Deep Learning Hard Way"></iframe>
+
+---
+
 ## Why I Did This
 
 The goal was simple: **learn neural networks by building one from scratch**, and then write a blog post to share what I learned.
@@ -74,10 +78,3 @@ It’s also a great way to study other machine learning techniques like:
 ---
 
 Hope this inspires someone else to build from scratch at least once. You’ll learn more than you expect.
-
----
-
-<iframe src="https://www.kaggle.com/embed/jpvargas/handcrafted-cnn-learning-deep-learning-hard-way?kernelSessionId=247211738" height="800" style="margin: 0 auto; width: 100%; max-width: 950px;" frameborder="0" scrolling="auto" title="Handcrafted CNN: Learning Deep Learning Hard Way"></iframe>
-
----
-
