@@ -11,7 +11,7 @@ interface BlogPost {
 export const loadBlogPosts = async (): Promise<BlogPost[]> => {
   try {
     // List of blog post files
-    const postSlugs = ['neural-network-engine', 'sae-crash-tool'];
+    const postSlugs = ['neural-network-engine', 'sae-crash-tool', 'house-prices'];
     
     const loadedPosts = await Promise.all(
       postSlugs.map(async (slug) => {
