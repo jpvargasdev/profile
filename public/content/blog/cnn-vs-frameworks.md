@@ -5,7 +5,7 @@ excerpt: "I wanted to test if I could build a working CNN from scratch—one tha
 slug: "handcrafted-cnn"
 ---
 
-<iframe src="https://www.kaggle.com/code/jpvargas/handcrafted-cnn-learning-deep-learning-hard-way?kernelSessionId=253562111" height="800" style="margin: 0 auto; width: 100%; max-width: 950px;" frameborder="0" scrolling="auto" title="Handcrafted CNN: Learning Deep Learning the Hard Way"></iframe>
+<iframe src="https://www.kaggle.com/embed/jpvargas/handcrafted-cnn-learning-deep-learning-hard-way?kernelSessionId=253562111" height="800" style="margin: 0 auto; width: 100%; max-width: 950px;" frameborder="0" scrolling="auto" title="Handcrafted CNN: Learning Deep Learning Hard Way"></iframe>
 
 ---
 

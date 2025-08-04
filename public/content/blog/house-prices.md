@@ -5,7 +5,7 @@ excerpt: "How my first month of learning data science and ML will perform in a r
 slug: "handcrafted-cnn"
 ---
 
-<iframe src="https://www.kaggle.com/code/jpvargas/challenge-house-prices?kernelSessionId=253423644" height="800" style="margin: 0 auto; width: 100%; max-width: 950px;" frameborder="0" scrolling="auto" title="Handcrafted CNN: Learning Deep Learning Hard Way"></iframe>
+<iframe src="https://www.kaggle.com/embed/jpvargas/challenge-house-prices?kernelSessionId=253423644" height="800" style="margin: 0 auto; width: 100%; max-width: 950px;" frameborder="0" scrolling="auto" title="Challenge: House_Prices"></iframe>
 
 ## Why I Did This
 
