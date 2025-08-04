@@ -51,7 +51,7 @@ export const HeroSection = () => {
                     <img 
                       src={`${import.meta.env.BASE_URL}profile.png`}
                       alt="Profile" 
-                      className="w-full h-full object-cover rounded-full transition-all duration-500 group-hover:scale-105"
+                      className="w-full h-full object-cover rounded-full transition-all duration-500 group-hover:scale-105 md:brightness-100 md:contrast-100 md:saturate-100"
                       onError={(e) => {
                         const imgElement = e.currentTarget;
                         const fallbackElement = imgElement.nextElementSibling as HTMLElement;
@@ -94,6 +94,32 @@ export const HeroSection = () => {
               <strong>I build intelligent systems that think, sense, and act.</strong> <br />
               Senior Software Engineer, Indie Hacker, and Maker passionate about AI, full-stack development, and robotics. I design custom neural networks, build autonomous drones, and bring smart products to life—from hardware schematics to machine learning pipelines.
             </p>
+          </div>
+        </div>
+        
+        {/* Personal Stats */}
+        <div 
+          className="flex flex-wrap justify-center gap-6 pt-8 text-sm md:text-base text-gray-600 dark:text-gray-400"
+          style={{
+            transform: `translateY(${scrollY * 0.03}px)`,
+            opacity: Math.max(0, 1 - scrollY / 650),
+          }}
+        >
+          <div className="flex items-center space-x-2">
+            <span className="text-blue-500">📍</span>
+            <span>Based in Stockholm</span>
+          </div>
+          <div className="flex items-center space-x-2">
+            <span className="text-green-500">🤖</span>
+            <span>8+ AI projects</span>
+          </div>
+          <div className="flex items-center space-x-2">
+            <span className="text-purple-500">🚁</span>
+            <span>3 drones built</span>
+          </div>
+          <div className="flex items-center space-x-2">
+            <span className="text-orange-500">💼</span>
+            <span>5+ years experience</span>
           </div>
         </div>
         

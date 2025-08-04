@@ -35,9 +35,19 @@ export const BlogList = ({ posts }: BlogListProps) => {
             onClick={() => handlePostClick(post)}
           >
             <div className="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-6 h-full transition-all duration-500 group-hover:bg-gray-100 dark:group-hover:bg-gray-800 border border-transparent group-hover:border-gray-200 dark:group-hover:border-gray-700">
-              {/* Blog post icon/image placeholder */}
-              <div className="w-full h-48 bg-gradient-to-br from-blue-400 to-purple-500 rounded-lg mb-6 flex items-center justify-center text-white text-4xl font-bold transition-all duration-500 group-hover:scale-105">
-                {post.title.charAt(0)}
+              {/* Blog post featured image or gradient placeholder */}
+              <div className="w-full h-48 rounded-lg mb-6 overflow-hidden transition-all duration-500 group-hover:scale-105">
+                {post.featuredImage ? (
+                  <img 
+                    src={post.featuredImage}
+                    alt={post.title}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center text-white text-4xl font-bold">
+                    {post.title.charAt(0)}
+                  </div>
+                )}
               </div>
               
               <div className="flex items-center space-x-4 text-sm text-gray-500 dark:text-gray-400 mb-4">

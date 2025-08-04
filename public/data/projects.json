@@ -5,6 +5,7 @@
     "year": "2024",
     "description": "Custom hardware-software system developed for If Insurance to monitor climate conditions in Swedish municipalities. Built the IoT device using Raspberry Pi and developed the backend in Python with Django. Real-time data is visualized via a dashboard for municipal adaptation strategies.",
     "tags": ["Python", "Django", "Raspberry Pi", "IoT", "Sensors"],
+    "image": "/images/project-circuit.jpg",
     "liveUrl": "https://www.if.se/om-if/hallbarhet/klimatanpassning/klimatvarnaren",
     "githubUrl": null,
     "featured": true
@@ -14,6 +15,7 @@
     "year": "2021",
     "description": "Co-founded Routte, a startup focused on optimizing last-mile delivery for small and medium-sized businesses. Designed and built a full-stack platform enabling route planning, dispatching, communication, and real-time delivery tracking. Helped businesses improve operational efficiency and customer satisfaction.",
     "tags": ["Next.js", "TypeScript", "Mapbox", "Firebase", "Startup"],
+    "image": "/images/project-laptop.jpg",
     "liveUrl": "https://routte.co/",
     "githubUrl": null,
     "featured": true
@@ -32,6 +34,7 @@
     "year": "2024",
     "description": "Guilliman is a personal finance automation app built to run my own financial life. It automatically classifies transactions, tracks daily expenses, and analyzes spending habits based on the 50/30/20 rule. Powered by a custom machine learning model, it provides contextual insights and alerts — all wrapped in a native mobile app built from scratch as a solo indie project.",
     "tags": ["React Native", "Golang", "PostgreSQL", "Railway", "Python", "AI", "ML", "Swift", "Kotlin", "Fintech", "Indie Hacker"],
+    "image": "/images/project-mobile.jpg",
     "liveUrl": null,
     "githubUrl": {
       "backend": "https://github.com/jpvargasdev/guilliman_expenses",
@@ -45,6 +48,7 @@
     "year": "2024",
     "description": "A neural network engine built entirely from scratch using JavaScript and TypeScript, featuring matrix-based computation, backpropagation, batch training, activation functions like ReLU and Sigmoid, and loss functions like MSE and Cross-Entropy. Designed to deepen my understanding of deep learning internals and serve as a minimal educational playground.",
     "tags": ["Neural Networks", "JavaScript", "TypeScript", "ML", "Backpropagation", "Matrix Math"],
+    "image": "/images/project-coding.jpg",
     "liveUrl": null,
     "githubUrl": "https://github.com/jpvargasdev/NN_engine",
     "featured": true

@@ -6,6 +6,7 @@ interface BlogPost {
   excerpt: string;
   content: string;
   tags?: string[];
+  featuredImage?: string;
 }
 
 export const loadBlogPosts = async (): Promise<BlogPost[]> => {
@@ -37,6 +38,7 @@ export const loadBlogPosts = async (): Promise<BlogPost[]> => {
           const dateMatch = frontmatter.match(/date:\s*["']([^"']+)["']/);
           const excerptMatch = frontmatter.match(/excerpt:\s*["']([^"']+)["']/);
           const slugMatch = frontmatter.match(/slug:\s*["']([^"']+)["']/);
+          const featuredImageMatch = frontmatter.match(/featuredImage:\s*["']([^"']+)["']/);
           
           if (!titleMatch || !dateMatch || !excerptMatch) {
             console.error(`Missing required frontmatter fields in ${slug}.md`);
@@ -48,7 +50,8 @@ export const loadBlogPosts = async (): Promise<BlogPost[]> => {
             title: titleMatch[1],
             date: dateMatch[1],
             excerpt: excerptMatch[1],
-            content: content.trim()
+            content: content.trim(),
+            featuredImage: featuredImageMatch ? featuredImageMatch[1] : undefined
           };
         } catch (error) {
           console.error(`Failed to load blog post: ${slug}`, error);

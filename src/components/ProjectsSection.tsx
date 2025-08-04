@@ -65,8 +65,18 @@ export const ProjectsSection = ({ onItemClick }: ProjectsSectionProps) => {
               onClick={() => onItemClick(project)}
             >
               <div className="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-1 mb-4 transition-all duration-300 group-hover:bg-gray-100 dark:group-hover:bg-gray-800">
-                <div className="aspect-video bg-white dark:bg-gray-900 rounded-md flex items-center justify-center transition-all duration-300">
-                  <div className="text-gray-400 dark:text-gray-500 font-medium text-sm">{project.title}</div>
+                <div className="aspect-video bg-white dark:bg-gray-900 rounded-md overflow-hidden transition-all duration-300">
+                  {project.image ? (
+                    <img 
+                      src={`${import.meta.env.BASE_URL}${project.image}`}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center text-white text-4xl font-bold transition-all duration-300 group-hover:from-blue-500 group-hover:to-purple-600">
+                      {project.title.charAt(0)}
+                    </div>
+                  )}
                 </div>
               </div>
               

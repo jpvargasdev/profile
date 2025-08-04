@@ -22,6 +22,15 @@ export const BlogPostView = ({ post }: BlogPostViewProps) => {
       
       <article className="prose prose-lg dark:prose-invert max-w-none">
         <header className="mb-8">
+          {post.featuredImage && (
+            <div className="w-full h-64 md:h-80 rounded-lg overflow-hidden mb-6">
+              <img 
+                src={post.featuredImage}
+                alt={post.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          )}
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             {post.title}
           </h1>

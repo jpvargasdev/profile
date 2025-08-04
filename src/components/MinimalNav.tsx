@@ -78,12 +78,22 @@ export const MinimalNav = ({ activeSection, onNavigate }: MinimalNavProps) => {
           <Link
             to="/blog"
             className={`px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 hover:scale-105 btn-press ${
-              location.pathname === '/blog'
+              location.pathname.startsWith('/blog')
                 ? "text-gray-900 dark:text-white bg-gray-100 dark:bg-gray-800"
                 : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
             }`}
           >
             Blog
+          </Link>
+          <Link
+            to="/info"
+            className={`px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 hover:scale-105 btn-press ${
+              location.pathname === '/info'
+                ? "text-gray-900 dark:text-white bg-gray-100 dark:bg-gray-800"
+                : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+            }`}
+          >
+            Info
           </Link>
         </div>
 
@@ -161,12 +171,23 @@ export const MinimalNav = ({ activeSection, onNavigate }: MinimalNavProps) => {
               to="/blog"
               onClick={() => setIsMobileMenuOpen(false)}
               className={`block px-4 py-3 text-base font-medium transition-all duration-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 ${
-                location.pathname === '/blog'
+                location.pathname.startsWith('/blog')
                   ? "text-gray-900 dark:text-white bg-gray-100 dark:bg-gray-800"
                   : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
               }`}
             >
               Blog
+            </Link>
+            <Link
+              to="/info"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`block px-4 py-3 text-base font-medium transition-all duration-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 ${
+                location.pathname === '/info'
+                  ? "text-gray-900 dark:text-white bg-gray-100 dark:bg-gray-800"
+                  : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+              }`}
+            >
+              Info
             </Link>
             
             {/* Mobile Social Links */}
