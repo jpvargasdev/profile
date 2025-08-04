@@ -40,21 +40,34 @@ export const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8 pt-20">
         <div className="space-y-6">
-          {/* Simple Profile Photo */}
+          {/* Animated Profile Photo */}
           <div className="flex justify-center mb-12">
-            <div className="w-48 h-48 md:w-56 md:h-56 rounded-full border-4 border-gray-200 dark:border-gray-700 overflow-hidden">
-              <img 
-                src={`${import.meta.env.BASE_URL}profile.jpg`}
-                alt="Profile" 
-                className="w-full h-full object-cover"
-                onError={(e) => {
-                  const imgElement = e.currentTarget;
-                  const container = imgElement.parentElement;
-                  if (container) {
-                    container.innerHTML = '<div class="w-full h-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-5xl font-bold text-gray-600 dark:text-gray-300">JV</div>';
-                  }
-                }}
-              />
+            <div className="relative group">
+              {/* Floating rings with animation */}
+              <div className="absolute inset-0 w-48 h-48 md:w-56 md:h-56 rounded-full border-2 border-blue-300/30 dark:border-blue-500/30 animate-pulse"></div>
+              <div className="absolute inset-[-8px] w-48 h-48 md:w-56 md:h-56 rounded-full border border-purple-300/20 dark:border-purple-500/20 animate-pulse delay-1000"></div>
+              
+              {/* Gradient background */}
+              <div className="absolute inset-0 w-48 h-48 md:w-56 md:h-56 rounded-full bg-gradient-to-br from-blue-400/20 via-purple-400/20 to-pink-400/20 dark:from-blue-500/20 dark:via-purple-500/20 dark:to-pink-500/20 blur-sm group-hover:blur-none transition-all duration-500"></div>
+              
+              {/* Main profile container */}
+              <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full border-4 border-white dark:border-gray-800 shadow-2xl overflow-hidden transform group-hover:scale-105 transition-all duration-500 group-hover:shadow-3xl">
+                <img 
+                  src={`${import.meta.env.BASE_URL}profile.jpg`}
+                  alt="Profile" 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  onError={(e) => {
+                    const imgElement = e.currentTarget;
+                    const container = imgElement.parentElement;
+                    if (container) {
+                      container.innerHTML = '<div class="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-600 flex items-center justify-center text-5xl font-bold text-gray-600 dark:text-gray-300">JV</div>';
+                    }
+                  }}
+                />
+                
+                {/* Overlay gradient on hover */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
             </div>
           </div>
 
