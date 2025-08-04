@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail} from "lucide-react";
 import { useEffect, useState } from "react";
 
 export const HeroSection = () => {
@@ -44,7 +44,7 @@ export const HeroSection = () => {
           <div className="flex justify-center mb-12">
             <div className="w-48 h-48 md:w-56 md:h-56 rounded-full border-4 border-gray-200 dark:border-gray-700 overflow-hidden">
               <img 
-                src={`${import.meta.env.BASE_URL}profile.png`}
+                src={`${import.meta.env.BASE_URL}profile.jpg`}
                 alt="Profile" 
                 className="w-full h-full object-cover"
                 onError={(e) => {
@@ -99,11 +99,11 @@ export const HeroSection = () => {
           </div>
           <div className="flex items-center space-x-2">
             <span className="text-purple-500">🚁</span>
-            <span>3 drones built</span>
+            <span>Many drones built and crashed</span>
           </div>
           <div className="flex items-center space-x-2">
             <span className="text-orange-500">💼</span>
-            <span>5+ years experience</span>
+            <span>12+ years experience</span>
           </div>
         </div>
         
