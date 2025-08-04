@@ -7,25 +7,25 @@ export const NowSection = () => {
       icon: MapPin,
       label: "Living in",
       value: "Stockholm, Sweden",
-      color: "text-red-500"
+      color: "text-gray-500"
     },
     {
       icon: Wrench,
       label: "Building",
       value: "Guilliman AI, Autonomous drones",
-      color: "text-purple-500"
+      color: "text-gray-500"
     },
     {
       icon: Brain,
       label: "Learning",
       value: "Reinforcement Learning, Machine learning algorithms, Embedded Systems",
-      color: "text-blue-500"
+      color: "text-gray-500"
     },
     {
       icon: BookOpen,
       label: "Reading",
       value: "Designing Machine Learning Systems",
-      color: "text-green-500"
+      color: "text-gray-500"
     }
   ];
 
@@ -66,7 +66,7 @@ export const NowSection = () => {
 
         <div className="text-center mt-8">
           <p className="text-sm text-gray-500 dark:text-gray-500">
-            Last updated: June 2025 • Inspired by{" "}
+            Last updated: July 2025 • Inspired by{" "}
             <a 
               href="https://nownownow.com" 
               target="_blank" 
