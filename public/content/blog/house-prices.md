@@ -2,7 +2,7 @@
 title: "House Pricing: My first kaggle competition"
 date: "2025-07-31"
 excerpt: "How my first month of learning data science and ML will perform in a real problem"
-slug: "handcrafted-cnn"
+slug: "house-prices"
 ---
 
 <iframe src="https://www.kaggle.com/embed/jpvargas/challenge-house-prices?kernelSessionId=253423644" height="800" style="margin: 0 auto; width: 100%; max-width: 950px;" frameborder="0" scrolling="auto" title="Challenge: House_Prices"></iframe>

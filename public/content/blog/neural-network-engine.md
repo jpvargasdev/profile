@@ -2,7 +2,7 @@
 title: "Handcrafted CNN: Learning Deep Learning the Hard Way"
 date: "2025-06-27"
 excerpt: "What happens when you implement a neural network from scratch? I skipped the libraries and built it all—by hand. Here's what I learned."
-slug: "handcrafted-cnn"
+slug: "handcrafted-nn"
 ---
 
 <iframe src="https://www.kaggle.com/embed/jpvargas/handcrafted-cnn-learning-deep-learning-hard-way?kernelSessionId=247211738" height="800" style="margin: 0 auto; width: 100%; max-width: 950px;" frameborder="0" scrolling="auto" title="Handcrafted CNN: Learning Deep Learning Hard Way"></iframe>
