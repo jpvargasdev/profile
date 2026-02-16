@@ -7,15 +7,15 @@ export const NowSection = () => {
     },
     {
       label: "Building",
-      value: "Guilliman AI, Autonomous drones"
+      value: "Guilliman AI, Field recording setup, SJ Led Screen"
     },
     {
       label: "Learning",
-      value: "Reinforcement Learning, ML algorithms"
+      value: "Software Architecture, System Design"
     },
     {
       label: "Reading",
-      value: "Designing Machine Learning Systems"
+      value: "Building Microservices - Designing Fine-Grained Systems"
     }
   ];
 
@@ -27,7 +27,7 @@ export const NowSection = () => {
             What I'm up to now
           </h2>
           <p className="text-sm text-gray-500 dark:text-gray-500 mt-1">
-            Last updated: February 2025 • Inspired by{" "}
+            Last updated: February 2026 • Inspired by{" "}
             <a 
               href="https://nownownow.com" 
               target="_blank" 

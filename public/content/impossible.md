@@ -42,19 +42,17 @@
 - [ ] Grow a side project to profitability
 - [ ] Be featured in Product Hunt or Hacker News
 - [ ] Collaborate on a public AI challenge
+- [ ] Build my own field recording setup
 
 ## Learn
 - [x] Master Mobile and Web development
 - [x] Master Backend, Devops, Infrastructure and Automation
 - [~] Master AI and Machine Learning
-- [~] Learn Blender or 3D modeling
+- [x] Learn Blender or 3D modeling
 - [x] Learn to draw or sketch
 - [ ] Build a personal knowledge system (PKM)
 - [~] Write technical blog posts
-- [ ] Make a YouTube video or short documentary
-- [ ] Learn to play guitar or another instrument
 - [ ] Take a storytelling or writing workshop
-- [ ] Launch a public newsletter
 - [x] Run a half marathon
 - [~] Run a marathon
 - [~] Run a triathlon
@@ -67,6 +65,7 @@
 - [ ] Go trail running in another country
 - [x] Bike 100km in a day
 - [ ] Learn to freedive
+- [ ] Learn how to edit Audio
 
 ## Impact
 - [ ] Start a nonprofit or foundation
