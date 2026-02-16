@@ -344,7 +344,7 @@
   background-clip: text;
 }
 
-.deep-mode nav {
+.deep-mode.dark nav {
   background: rgba(10, 10, 10, 0.95);
   border-bottom: 1px solid rgba(34, 197, 94, 0.2);
   backdrop-filter: blur(20px);

@@ -34,7 +34,7 @@ export const LabSection = () => {
   ];
 
   return (
-    <section id="lab" className="pt-12 border-t border-gray-200/50 dark:border-gray-700/50">
+    <section id="lab" className="">
       <div className="max-w-6xl mx-auto">
         <div className="mb-6">
           <h2 className="text-xl font-bold text-gray-900 dark:text-white">
