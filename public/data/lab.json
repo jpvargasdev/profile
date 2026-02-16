@@ -1,0 +1,17 @@
+[
+  {
+    "title": "FPV Video Extraction",
+    "description": "Extracting live video feed from FPV goggles for real-time computer vision processing.",
+    "status": "Prototype"
+  },
+  {
+    "title": "Computer Vision Pipeline",
+    "description": "Custom object detection pipeline optimized for autonomous FPV drone navigation.",
+    "status": "Sketch"
+  },
+  {
+    "title": "SJ LED Display",
+    "description": "Real-time train schedule display system for a happier life.",
+    "status": "Building"
+  }
+]

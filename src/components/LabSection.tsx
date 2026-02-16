@@ -1,37 +1,20 @@
+import { useState, useEffect } from 'react';
+
+interface LabProject {
+  title: string;
+  description: string;
+  status: string;
+}
 
 export const LabSection = () => {
-  const labProjects = [
-    {
-      title: "Neural Network Visualizer",
-      description: "Real-time visualization of neural network training processes using interactive graphics",
-      status: "Prototype"
-    },
-    {
-      title: "Drone Swarm Intelligence",
-      description: "Collective behavior algorithms for coordinating multiple autonomous drones in formation",
-      status: "Experiment"
-    },
-    {
-      title: "RL Racing Simulator",
-      description: "Teaching AI agents to race competitively using reinforcement learning techniques",
-      status: "Active"
-    },
-    {
-      title: "Computer Vision Pipeline",
-      description: "Custom object detection system optimized for FPV drone navigation",
-      status: "Testing"
-    },
-    {
-      title: "Micro-Service Mesh",
-      description: "Kubernetes orchestration system for deploying and scaling ML models",
-      status: "Draft"
-    },
-    {
-      title: "Hardware Prototypes",
-      description: "Custom PCB designs for embedded AI applications on edge devices",
-      status: "Sketching"
-    }
-  ];
+  const [labProjects, setLabProjects] = useState<LabProject[]>([]);
+
+  useEffect(() => {
+    fetch('/data/lab.json')
+      .then(response => response.json())
+      .then(data => setLabProjects(data))
+      .catch(error => console.error('Error loading lab projects:', error));
+  }, []);
 
   return (
     <section id="lab" className="">
