@@ -37,8 +37,8 @@ export const FloatingSidebar = ({ activeSection, onNavigate }: FloatingSidebarPr
           </AvatarFallback>
         </Avatar>
         <div>
-          <h3 className="font-bold text-gray-900 dark:text-white text-sm">John Doe</h3>
-          <p className="text-xs text-gray-600 dark:text-gray-400">Developer</p>
+          <h3 className="font-bold text-gray-900 dark:text-white text-sm">Juan Vargas</h3>
+          <p className="text-xs text-gray-600 dark:text-gray-400">Software Engineer</p>
         </div>
       </div>
 

@@ -1,7 +1,7 @@
 [
   {
     "company": "SEB",
-    "role": "Software Engineer",
+    "role": "Consultant - Senior Software Engineer",
     "start": "Sep 2023",
     "end": "Present",
     "description": "Backend engineer in a financial institution, contributing to scalable infrastructure and service development. Focused on Node.js services deployed on GCP with strong DevOps practices.",
@@ -10,7 +10,7 @@
   },
   {
     "company": "App Shack / NoA",
-    "role": "Software Engineer",
+    "role": "Senior Software Engineer",
     "start": "Sep 2023",
     "end": "Present",
     "description": "Part of a distributed team building backend services and cloud infrastructure. Worked closely on microservices architecture for mobile and web applications.",
@@ -19,7 +19,7 @@
   },
   {
     "company": "0+X",
-    "role": "Software Engineer",
+    "role": "Senior Software Engineer",
     "start": "Jan 2022",
     "end": "Sep 2023",
     "description": "Worked as a consultant building software solutions for international clients. Delivered production-grade code and contributed to team practices and architecture decisions.",

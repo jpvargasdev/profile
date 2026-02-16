@@ -1,6 +1,5 @@
 
 import { useState, useEffect } from "react";
-import { Target } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { loadMarkdown } from "../utils/dataLoader";
 
@@ -19,20 +18,11 @@ export const ImpossibleSection = () => {
 
   if (loading) {
     return (
-      <section id="impossible" className="py-20">
-        <div className="space-y-16">
-          <div className="text-center space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white flex items-center justify-center space-x-4">
-              <Target size={40} />
-              <span>Goals</span>
-            </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              My personal challenge to continuously grow and push boundaries.
-            </p>
-          </div>
+      <section id="impossible" className="">
+        <div className="space-y-6">
+          <h2 className="text-xl font-bold text-gray-900 dark:text-white">Impossible List</h2>
           
           <div className="space-y-8 animate-pulse">
-            <div className="h-8 bg-gray-200 dark:bg-gray-700 rounded w-1/2 mx-auto"></div>
             <div className="space-y-4">
               {[...Array(6)].map((_, i) => (
                 <div key={i} className="h-4 bg-gray-200 dark:bg-gray-700 rounded"></div>
@@ -45,71 +35,55 @@ export const ImpossibleSection = () => {
   }
 
   return (
-    <section id="impossible" className="py-20">
-      <div className="space-y-16">
-        <div className="text-center space-y-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white flex items-center justify-center space-x-4">
-            <Target size={40} />
-            <span>Goals</span>
-          </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            My personal challenge to continuously grow and push boundaries.
-          </p>
-        </div>
+    <section id="impossible" className="">
+      <div className="space-y-6">
+        <h2 className="text-xl font-bold text-gray-900 dark:text-white">Goals</h2>
 
-        <div className="max-w-4xl mx-auto">
-          <div className="prose prose-lg prose-gray dark:prose-invert max-w-none">
+        <div className="max-w-4xl">
+          <div className="prose prose-gray dark:prose-invert max-w-none">
             <ReactMarkdown
               components={{
-                h1: ({ children }) => (
-                  <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 pb-4 border-b border-gray-200 dark:border-gray-700">
-                    {children}
-                  </h1>
-                ),
+                h1: () => null,
                 h2: ({ children }) => (
-                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white mt-12 mb-6">
+                  <h3 className="text-base font-medium text-gray-900 dark:text-white mt-8 mb-3">
                     {children}
-                  </h2>
+                  </h3>
                 ),
-                p: ({ children }) => (
-                  <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                    {children}
-                  </p>
-                ),
-                ul: ({ children }) => <ul className="space-y-4 mb-8">{children}</ul>,
+                p: ({ children }) => {
+                  const content = children?.toString() || '';
+                  if (content.includes('_') || content.includes('Inspired by')) {
+                    return null;
+                  }
+                  return (
+                    <p className="text-base text-gray-600 dark:text-gray-300 mb-4">
+                      {children}
+                    </p>
+                  );
+                },
+                ul: ({ children }) => <ul className="space-y-1.5 mb-6">{children}</ul>,
                 li: ({ children }) => {
                   const content = children?.toString() || '';
                   
-                  if (content.includes('[ ]')) {
-                    return (
-                      <li className="flex items-center space-x-4 p-4 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors">
-                        <div className="w-4 h-4 border-2 border-gray-300 dark:border-gray-600 rounded"></div>
-                        <span className="text-gray-700 dark:text-gray-300">{content.replace('[ ]', '').trim()}</span>
-                      </li>
-                    );
-                  }
+                  // Remove checkbox markers and just show text
+                  const cleanContent = content
+                    .replace('[ ]', '')
+                    .replace('[~]', '')
+                    .replace('[x]', '')
+                    .trim();
                   
-                  if (content.includes('[~]')) {
-                    return (
-                      <li className="flex items-center space-x-4 p-4 hover:bg-yellow-50 dark:hover:bg-yellow-900/20 rounded-lg transition-colors">
-                        <div className="w-4 h-4 bg-yellow-400 rounded-full"></div>
-                        <span className="text-gray-700 dark:text-gray-300">{content.replace('[~]', '').trim()}</span>
-                      </li>
-                    );
-                  }
+                  // Apply subtle strikethrough for completed items only
+                  const isCompleted = content.includes('[x]');
                   
-                  if (content.includes('[x]')) {
-                    return (
-                      <li className="flex items-center space-x-4 p-4 hover:bg-green-50 dark:hover:bg-green-900/20 rounded-lg transition-colors">
-                        <div className="w-4 h-4 bg-green-500 rounded-full"></div>
-                        <span className="text-gray-500 dark:text-gray-400 line-through">{content.replace('[x]', '').trim()}</span>
-                      </li>
-                    );
-                  }
-                  
-                  return <li className="text-gray-600 dark:text-gray-300 leading-relaxed">{children}</li>;
+                  return (
+                    <li className="flex items-start">
+                      <span className="mr-2 text-gray-400 dark:text-gray-500">•</span>
+                      <span className={`text-base ${isCompleted ? 'text-gray-400 dark:text-gray-500 line-through' : 'text-gray-700 dark:text-gray-300'}`}>
+                        {cleanContent}
+                      </span>
+                    </li>
+                  );
                 },
-                hr: () => <hr className="my-12 border-gray-200 dark:border-gray-700" />
+                hr: () => null
               }}
             >
               {content}

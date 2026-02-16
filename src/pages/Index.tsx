@@ -6,7 +6,6 @@ import { NowSection } from "../components/NowSection";
 import { ProjectsSection } from "../components/ProjectsSection";
 import { LabSection } from "../components/LabSection";
 import { ExperienceSection } from "../components/ExperienceSection";
-import { TechRadarSection } from "../components/TechRadarSection";
 import { ImpossibleSection } from "../components/ImpossibleSection";
 import { ContactSection } from "../components/ContactSection";
 import { DetailOverlay } from "../components/DetailOverlay";
@@ -22,7 +21,7 @@ const Index = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["about", "now", "projects", "lab", "experience", "tech-radar", "impossible", "contact"];
+      const sections = ["about", "now", "projects", "lab", "experience", "impossible", "contact"];
       const scrollPosition = window.scrollY + 200;
 
       for (const section of sections) {
@@ -64,16 +63,30 @@ const Index = () => {
       <MinimalNav activeSection={activeSection} onNavigate={scrollToSection} />
       
       <main>
-        <HeroSection />
+        <div className="max-w-6xl mx-auto px-6">
+          <HeroSection />
+          <div className="border-t border-gray-200/50 dark:border-gray-800/50"></div>
+        </div>
         
-        <div className="max-w-6xl mx-auto px-6 space-y-32">
-          <NowSection />
-          <ProjectsSection onItemClick={(project) => openOverlay(project, 'project')} />
-          <LabSection />
-          <ExperienceSection onItemClick={(experience) => openOverlay(experience, 'experience')} />
-          <TechRadarSection />
-          <ImpossibleSection />
-          <ContactSection />
+        <div className="max-w-6xl mx-auto px-6 divide-y divide-gray-200/50 dark:divide-gray-800/50">
+          <div className="py-6">
+            <ExperienceSection onItemClick={(experience) => openOverlay(experience, 'experience')} />
+          </div>
+          <div className="py-6">
+            <NowSection />
+          </div>
+          <div className="py-6">
+            <ProjectsSection onItemClick={(project) => openOverlay(project, 'project')} />
+          </div>
+          <div className="py-6">
+            <LabSection />
+          </div>
+          <div className="py-6">
+            <ImpossibleSection />
+          </div>
+          <div className="py-6">
+            <ContactSection />
+          </div>
         </div>
       </main>
 

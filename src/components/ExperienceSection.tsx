@@ -1,12 +1,36 @@
 
 import { useState, useEffect } from "react";
-import { Calendar, MapPin } from "lucide-react";
 import { Experience } from "../types";
 import { loadExperience } from "../utils/dataLoader";
 
 interface ExperienceSectionProps {
   onItemClick: (experience: Experience) => void;
 }
+
+// Helper function to format dates
+const formatYear = (dateStr: string): string => {
+  if (dateStr.toLowerCase() === 'present') return 'Present';
+  const year = dateStr.match(/\d{4}/)?.[0];
+  return year || dateStr;
+};
+
+// Helper function to group experiences by location
+const groupByLocation = (experiences: Experience[]): Record<string, Experience[]> => {
+  const grouped: Record<string, Experience[]> = {
+    'Sweden': [],
+    'Colombia': []
+  };
+  
+  experiences.forEach(exp => {
+    if (exp.location.includes('Sweden')) {
+      grouped['Sweden'].push(exp);
+    } else if (exp.location.includes('Colombia')) {
+      grouped['Colombia'].push(exp);
+    }
+  });
+  
+  return grouped;
+};
 
 export const ExperienceSection = ({ onItemClick }: ExperienceSectionProps) => {
   const [experience, setExperience] = useState<Experience[]>([]);
@@ -23,21 +47,12 @@ export const ExperienceSection = ({ onItemClick }: ExperienceSectionProps) => {
 
   if (loading) {
     return (
-      <section id="experience" className="py-20">
-        <div className="space-y-16">
-          <div className="text-center space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">Work Experience</h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              My professional journey and the roles that have shaped my career.
-            </p>
-          </div>
-          
-          <div className="space-y-12">
+      <section id="experience" className="">
+        <div className="space-y-6">
+          <h2 className="text-xl font-bold text-gray-900 dark:text-white">Experience</h2>
+          <div className="space-y-2">
             {[...Array(3)].map((_, i) => (
-              <div key={i} className="animate-pulse space-y-4">
-                <div className="h-6 bg-gray-200 dark:bg-gray-700 rounded w-1/2"></div>
-                <div className="h-5 bg-gray-200 dark:bg-gray-700 rounded w-1/3"></div>
-                <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-full"></div>
+              <div key={i} className="animate-pulse">
                 <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-3/4"></div>
               </div>
             ))}
@@ -47,67 +62,46 @@ export const ExperienceSection = ({ onItemClick }: ExperienceSectionProps) => {
     );
   }
 
-  return (
-    <section id="experience" className="py-20">
-      <div className="space-y-16">
-        <div className="text-center space-y-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">Work Experience</h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            My professional journey and the roles that have shaped my career.
-          </p>
-        </div>
+  const groupedExperience = groupByLocation(experience);
 
-        <div className="relative space-y-12">
-          <div className="absolute left-0 top-0 bottom-0 w-px bg-gray-200 dark:bg-gray-700 hidden md:block"></div>
-          
-          {experience.map((job, index) => (
-            <div
-              key={index}
-              className="relative group cursor-pointer md:pl-12"
-              onClick={() => onItemClick(job)}
-            >
-              <div className="absolute left-0 top-2 w-2 h-2 bg-gray-900 dark:bg-white rounded-full transform -translate-x-1/2 hidden md:block group-hover:scale-150 transition-transform"></div>
-              
-              <div className="space-y-4">
-                <div className="space-y-2">
-                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors">
-                    {job.role}
-                  </h3>
-                  <div className="text-xl text-gray-700 dark:text-gray-200 font-medium">{job.company}</div>
-                  <div className="flex flex-wrap gap-4 text-gray-500 dark:text-gray-400">
-                    <div className="flex items-center space-x-2">
-                      <Calendar size={16} />
-                      <span>{job.start} - {job.end}</span>
-                    </div>
-                    {job.location && (
-                      <div className="flex items-center space-x-2">
-                        <MapPin size={16} />
-                        <span>{job.location}</span>
-                      </div>
-                    )}
-                  </div>
-                </div>
-                
-                <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed max-w-3xl">
-                  {job.description}
-                </p>
-                
-                {job.technologies && (
-                  <div className="flex flex-wrap gap-3 pt-2">
-                    {job.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-3 py-1 text-sm text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 rounded-full"
-                      >
-                        {tech}
+  return (
+    <section id="experience" className="">
+      <div className="space-y-6">
+        <h2 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white">Experience</h2>
+        
+        {Object.entries(groupedExperience).map(([location, jobs]) => (
+          jobs.length > 0 && (
+            <div key={location} className="space-y-2">
+              <h3 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide">
+                {location}
+              </h3>
+              <div className="space-y-1">
+                {jobs.map((job, index) => {
+                  const startYear = formatYear(job.start);
+                  const endYear = formatYear(job.end);
+                  const yearRange = `${startYear}–${endYear}`;
+                  
+                  return (
+                    <div
+                      key={index}
+                      className="flex items-baseline justify-between gap-4 cursor-pointer hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+                      onClick={() => onItemClick(job)}
+                    >
+                      <span className="text-base text-gray-900 dark:text-white">
+                        <span className="font-medium">{job.company}</span>
+                        {" — "}
+                        <span className="font-normal">{job.role}</span>
                       </span>
-                    ))}
-                  </div>
-                )}
+                      <span className="text-sm text-gray-500 dark:text-gray-400 whitespace-nowrap">
+                        {yearRange}
+                      </span>
+                    </div>
+                  );
+                })}
               </div>
             </div>
-          ))}
-        </div>
+          )
+        ))}
       </div>
     </section>
   );

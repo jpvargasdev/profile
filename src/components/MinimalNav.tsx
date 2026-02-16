@@ -16,13 +16,6 @@ export const MinimalNav = ({ activeSection, onNavigate }: MinimalNavProps) => {
   const isHomePage = location.pathname === '/';
   
   const navigationItems = [
-    { id: "about", label: "About" },
-    { id: "now", label: "Now" },
-    { id: "projects", label: "Projects" },
-    { id: "lab", label: "Lab" },
-    { id: "experience", label: "Experience" },
-    { id: "tech-radar", label: "Tech Radar" },
-    { id: "impossible", label: "Goals" },
     { id: "contact", label: "Contact" },
   ];
 
@@ -42,39 +35,36 @@ export const MinimalNav = ({ activeSection, onNavigate }: MinimalNavProps) => {
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center space-x-1">
-          {isHomePage ? (
-            navigationItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => onNavigate(item.id)}
-                className={`px-3 py-2 text-sm font-medium transition-all duration-300 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 hover:scale-105 btn-press ${
-                  activeSection === item.id
-                    ? "text-gray-900 dark:text-white bg-gray-100 dark:bg-gray-800"
-                    : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
-                }`}
-              >
-                {item.label}
-              </button>
-            ))
-          ) : (
-            <>
-              <Link
-                to="/"
-                className="px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 hover:scale-105 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white btn-press"
-              >
-                Home
-              </Link>
-              {navigationItems.map((item) => (
-                <Link
-                  key={item.id}
-                  to={`/#${item.id}`}
-                  className="px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 hover:scale-105 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white btn-press"
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </>
+          {!isHomePage && (
+            <Link
+              to="/"
+              className="px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 hover:scale-105 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white btn-press"
+            >
+              Home
+            </Link>
           )}
+          {isHomePage && navigationItems.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => onNavigate(item.id)}
+              className={`px-3 py-2 text-sm font-medium transition-all duration-300 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 hover:scale-105 btn-press ${
+                activeSection === item.id
+                  ? "text-gray-900 dark:text-white bg-gray-100 dark:bg-gray-800"
+                  : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+              }`}
+            >
+              {item.label}
+            </button>
+          ))}
+          {!isHomePage && navigationItems.map((item) => (
+            <Link
+              key={item.id}
+              to={`/#${item.id}`}
+              className="px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 hover:scale-105 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white btn-press"
+            >
+              {item.label}
+            </Link>
+          ))}
           <Link
             to="/blog"
             className={`px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 hover:scale-105 btn-press ${
@@ -122,41 +112,38 @@ export const MinimalNav = ({ activeSection, onNavigate }: MinimalNavProps) => {
       {isMobileMenuOpen && (
         <div className="lg:hidden bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl border-t border-gray-200/20 dark:border-gray-700/20">
           <div className="max-w-6xl mx-auto px-6 py-4 space-y-2">
-            {isHomePage ? (
-              navigationItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => handleMobileNavClick(() => onNavigate(item.id))}
-                  className={`block w-full text-left px-4 py-3 text-base font-medium transition-all duration-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 ${
-                    activeSection === item.id
-                      ? "text-gray-900 dark:text-white bg-gray-100 dark:bg-gray-800"
-                      : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
-                  }`}
-                >
-                  {item.label}
-                </button>
-              ))
-            ) : (
-              <>
-                <Link
-                  to="/"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="block px-4 py-3 text-base font-medium transition-all duration-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
-                >
-                  Home
-                </Link>
-                {navigationItems.map((item) => (
-                  <Link
-                    key={item.id}
-                    to={`/#${item.id}`}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="block px-4 py-3 text-base font-medium transition-all duration-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </>
+            {!isHomePage && (
+              <Link
+                to="/"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block px-4 py-3 text-base font-medium transition-all duration-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+              >
+                Home
+              </Link>
             )}
+            {isHomePage && navigationItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => handleMobileNavClick(() => onNavigate(item.id))}
+                className={`block w-full text-left px-4 py-3 text-base font-medium transition-all duration-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 ${
+                  activeSection === item.id
+                    ? "text-gray-900 dark:text-white bg-gray-100 dark:bg-gray-800"
+                    : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+                }`}
+              >
+                {item.label}
+              </button>
+            ))}
+            {!isHomePage && navigationItems.map((item) => (
+              <Link
+                key={item.id}
+                to={`/#${item.id}`}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block px-4 py-3 text-base font-medium transition-all duration-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+              >
+                {item.label}
+              </Link>
+            ))}
             <Link
               to="/blog"
               onClick={() => setIsMobileMenuOpen(false)}
