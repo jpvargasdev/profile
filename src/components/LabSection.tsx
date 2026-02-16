@@ -10,7 +10,7 @@ export const LabSection = () => {
   const [labProjects, setLabProjects] = useState<LabProject[]>([]);
 
   useEffect(() => {
-    fetch('/data/lab.json')
+    fetch(`${import.meta.env.BASE_URL}data/lab.json`)
       .then(response => response.json())
       .then(data => setLabProjects(data))
       .catch(error => console.error('Error loading lab projects:', error));

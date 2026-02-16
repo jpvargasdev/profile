@@ -1,11 +1,3 @@
-# Portfolio 2025
-Made with lovable
+# Portfolio 2026
 
-## Tech Stack
-
-    #vite #react #tailwind #zod #radix-ui
-
-## Dev
-
-```yarn && build:dev```
-```yarn dev```
+```npm run dev```
