@@ -21,7 +21,7 @@ export const ContactSection = () => {
           
           <div className="flex gap-2 text-sm text-gray-500 dark:text-gray-400 pt-2">
             <a 
-              href="https://linkedin.com/in/juanfervargas" 
+              href="https://linkedin.com/in/jp-vargasm/"
               target="_blank" 
               rel="noopener noreferrer"
               className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors"
