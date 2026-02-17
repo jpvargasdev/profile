@@ -30,7 +30,7 @@ export const ContactSection = () => {
             </a>
             <span>·</span>
             <a 
-              href="https://github.com/juanfervargas" 
+              href="https://github.com/jpvargasdev" 
               target="_blank" 
               rel="noopener noreferrer"
               className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors"
