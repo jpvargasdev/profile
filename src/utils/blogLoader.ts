@@ -13,6 +13,7 @@ export const loadBlogPosts = async (): Promise<BlogPost[]> => {
   try {
     // List of blog post files
     const postSlugs = [
+      'custom-led-screen',
       'neural-network-engine',
       'sae-crash-tool',
       'house-prices',

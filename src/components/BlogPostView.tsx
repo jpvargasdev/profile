@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import { BlogPost } from "../utils/blogLoader";
+import { resolveImageSrc } from "../utils/resolveImageSrc";
 
 interface BlogPostViewProps {
   post: BlogPost;
@@ -34,6 +35,18 @@ export const BlogPostView = ({ post }: BlogPostViewProps) => {
             })} · {Math.ceil(post.content.split(' ').length / 200)} min read
           </p>
         </header>
+
+        {/* Featured Image */}
+        {post.featuredImage && (
+          <div className="rounded-lg overflow-hidden">
+            <img
+              src={resolveImageSrc(post.featuredImage)}
+              alt={post.title}
+              className="w-full h-auto object-cover rounded-lg"
+              loading="lazy"
+            />
+          </div>
+        )}
         
         {/* Content */}
         <div className="prose prose-lg dark:prose-invert max-w-none text-gray-700 dark:text-gray-300">
@@ -51,6 +64,15 @@ export const BlogPostView = ({ post }: BlogPostViewProps) => {
               ),
               hr: ({ node, ...props }) => (
                 <div className="my-12" {...props} />
+              ),
+              img: ({ node, src, alt, ...props }) => (
+                <img
+                  src={resolveImageSrc(src)}
+                  alt={alt || ''}
+                  className="w-full h-auto rounded-lg my-8"
+                  loading="lazy"
+                  {...props}
+                />
               ),
               iframe: ({ node, ...props }) => {
                 const isKaggle = props.src?.includes('kaggle.com');

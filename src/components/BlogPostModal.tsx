@@ -4,6 +4,7 @@ import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import { Link } from "react-router-dom";
 import { BlogPost } from "../utils/blogLoader";
+import { resolveImageSrc } from "../utils/resolveImageSrc";
 
 interface BlogPostModalProps {
   post: BlogPost | null;
@@ -42,6 +43,15 @@ export const BlogPostModal = ({ post, isOpen, onClose }: BlogPostModalProps) => 
             <ReactMarkdown
               rehypePlugins={[rehypeRaw]}
               components={{
+                img: ({ node, src, alt, ...props }) => (
+                  <img
+                    src={resolveImageSrc(src)}
+                    alt={alt || ''}
+                    className="w-full h-auto rounded-lg my-4"
+                    loading="lazy"
+                    {...props}
+                  />
+                ),
                 iframe: ({ node, ...props }) => (
                   <div className="my-4 flex justify-center">
                     <iframe
