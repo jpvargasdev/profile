@@ -38,11 +38,11 @@ export const BlogPostView = ({ post }: BlogPostViewProps) => {
 
         {/* Featured Image */}
         {post.featuredImage && (
-          <div className="rounded-lg overflow-hidden">
+          <div className="flex justify-center rounded-lg overflow-hidden">
             <img
               src={resolveImageSrc(post.featuredImage)}
               alt={post.title}
-              className="w-full h-auto object-cover rounded-lg"
+              className="max-w-2xl max-h-[500px] w-full h-auto object-contain rounded-lg"
               loading="lazy"
             />
           </div>
@@ -69,11 +69,25 @@ export const BlogPostView = ({ post }: BlogPostViewProps) => {
                 <img
                   src={resolveImageSrc(src)}
                   alt={alt || ''}
-                  className="w-full h-auto rounded-lg my-8"
+                  className="max-w-2xl max-h-[500px] w-full h-auto object-contain rounded-lg my-8 mx-auto"
                   loading="lazy"
                   {...props}
                 />
               ),
+              a: ({ node, href, children, ...props }) => {
+                const isExternal = href?.startsWith('http://') || href?.startsWith('https://');
+                return (
+                  <a
+                    href={href}
+                    className="text-blue-600 dark:text-blue-400 underline decoration-blue-600/30 dark:decoration-blue-400/30 underline-offset-2 hover:decoration-blue-600 dark:hover:decoration-blue-400 transition-colors"
+                    {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                    {...props}
+                  >
+                    {children}
+                    {isExternal && <span className="inline-block ml-1 text-xs">↗</span>}
+                  </a>
+                );
+              },
               iframe: ({ node, ...props }) => {
                 const isKaggle = props.src?.includes('kaggle.com');
                 return (

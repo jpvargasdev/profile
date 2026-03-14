@@ -47,11 +47,25 @@ export const BlogPostModal = ({ post, isOpen, onClose }: BlogPostModalProps) => 
                   <img
                     src={resolveImageSrc(src)}
                     alt={alt || ''}
-                    className="w-full h-auto rounded-lg my-4"
+                    className="max-w-xl max-h-[300px] w-full h-auto object-contain rounded-lg my-4 mx-auto"
                     loading="lazy"
                     {...props}
                   />
                 ),
+                a: ({ node, href, children, ...props }) => {
+                  const isExternal = href?.startsWith('http://') || href?.startsWith('https://');
+                  return (
+                    <a
+                      href={href}
+                      className="text-blue-600 dark:text-blue-400 underline decoration-blue-600/30 dark:decoration-blue-400/30 underline-offset-2 hover:decoration-blue-600 dark:hover:decoration-blue-400 transition-colors"
+                      {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                      {...props}
+                    >
+                      {children}
+                      {isExternal && <span className="inline-block ml-1 text-xs">↗</span>}
+                    </a>
+                  );
+                },
                 iframe: ({ node, ...props }) => (
                   <div className="my-4 flex justify-center">
                     <iframe

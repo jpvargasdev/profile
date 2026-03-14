@@ -79,6 +79,6 @@ Then the latest part was design a custom 3d printed case using FreeCad
 
 I guess I will add some more tweaks later, like weather during the day, forecast, or maybe connect it with the calendar to display small reminders, and my gf wants a black case for it because the screen is black, so I will print another one just to see how it looks in black case.
 
-At the end I'm very happy with the product and here u can find the link to the project with some Bluetooth logs, the golang code and some python scripts
+At the end I'm very happy with the product and here u can find the link to the project with some Bluetooth logs, the golang code and some python scripts.
 
-https://github.com/jpvargasdev/MachineSpiritTimetable
+So check the [repository](https://github.com/jpvargasdev/MachineSpiritTimetable) for more information.
