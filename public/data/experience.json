@@ -1,9 +1,18 @@
 [
   {
     "company": "SEB",
-    "role": "Consultant - Senior Software Engineer",
+    "role": "Senior Software Engineer",
     "start": "Sep 2023",
     "end": "Present",
+    "description": "Backend engineer in a financial institution, contributing to scalable infrastructure and service development. Focused on Node.js services deployed on GCP with strong DevOps practices.",
+    "location": "Stockholm, Sweden",
+    "technologies": ["Node.js", "Kubernetes", "Terraform", "Google Cloud", "Redis", "PostgreSQL", "Docker", "DevOps"]
+  },
+  {
+    "company": "SEB",
+    "role": "Consultant - Senior Software Engineer",
+    "start": "Sep 2023",
+    "end": "May 2026",
     "description": "Backend engineer in a financial institution, contributing to scalable infrastructure and service development. Focused on Node.js services deployed on GCP with strong DevOps practices.",
     "location": "Stockholm, Sweden",
     "technologies": ["Node.js", "Kubernetes", "Terraform", "Google Cloud", "Redis", "PostgreSQL", "Docker", "DevOps"]
@@ -12,7 +21,7 @@
     "company": "App Shack / NoA",
     "role": "Senior Software Engineer",
     "start": "Sep 2023",
-    "end": "Present",
+    "end": "May 2026",
     "description": "Part of a distributed team building backend services and cloud infrastructure. Worked closely on microservices architecture for mobile and web applications.",
     "location": "Stockholm, Sweden",
     "technologies": ["Node.js", "Kubernetes", "Google Cloud", "Terraform", "DevOps"]
